@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "question": "What is supervised learning?",
+    "expected_document": "An-Introduction-to-Statistical-Learning-with-Applications-in-Python.pdf"
+  },
+  {
+    "id": 2,
+    "question": "What is overfitting in machine learning?",
+    "expected_document": "An-Introduction-to-Statistical-Learning-with-Applications-in-Python.pdf"
+  },
+  {
+    "id": 3,
+    "question": "What is the difference between supervised and unsupervised learning?",
+    "expected_document": "An-Introduction-to-Statistical-Learning-with-Applications-in-Python.pdf"
+  },
+  {
+    "id": 4,
+    "question": "What is gradient descent?",
+    "expected_document": "deep-learning-material-dept-ece-ase-blr-1.pdf"
+  },
+  {
+    "id": 5,
+    "question": "What is a neural network?",
+    "expected_document": "deep-learning-material-dept-ece-ase-blr-1.pdf"
+  },
+  {
+    "id": 6,
+    "question": "What is regularization?",
+    "expected_document": "Applied-Machine-Learning-and-AI-for-Engineers.pdf"
+  },
+  {
+    "id": 7,
+    "question": "What is feature engineering?",
+    "expected_document": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf"
+  },
+  {
+    "id": 8,
+    "question": "What is machine learning engineering?",
+    "expected_document": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf"
+  }
+]

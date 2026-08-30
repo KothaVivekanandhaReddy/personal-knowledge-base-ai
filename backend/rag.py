@@ -90,6 +90,7 @@ ANSWER:
 
         results = self.retriever.search(
             query=question,
+            retrieve_k=20,
             top_k=top_k
         )
 

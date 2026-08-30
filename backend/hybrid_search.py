@@ -63,22 +63,57 @@ class HybridSearch:
 
         candidates = {}
 
+        # Add FAISS results
         for result in vector_results:
 
             chunk_id = result["chunk_id"]
 
-            candidates[chunk_id] = result
+            candidates[chunk_id] = result.copy()
+
+            candidates[chunk_id]["vector_score"] = (
+                result["score"]
+            )
+
+            candidates[chunk_id]["bm25_score"] = None
+
+            candidates[chunk_id]["retrieved_by"] = [
+                "faiss"
+            ]
 
 
+        # Add BM25 results
         for chunk_index, score in bm25_results:
 
-            chunk = self.vector_store.chunks[chunk_index]
+            chunk = self.vector_store.chunks[
+            chunk_index
+            ]
 
             chunk_id = chunk["chunk_id"]
 
             if chunk_id not in candidates:
 
                 candidates[chunk_id] = chunk.copy()
+
+                candidates[chunk_id]["vector_score"] = None
+
+                candidates[chunk_id]["bm25_score"] = float(
+                    score
+                )
+
+                candidates[chunk_id]["retrieved_by"] = [
+                    "bm25"
+                ]
+
+            else:
+
+                candidates[chunk_id]["bm25_score"] = float(
+                    score
+                )
+
+                candidates[chunk_id]["retrieved_by"].append(
+                    "bm25"
+                )
+
 
         candidate_list = list(
             candidates.values()
@@ -153,4 +188,19 @@ if __name__ == "__main__":
 
             print(
                 result["text"][:600]
+            )
+
+            print(
+                "Retrieved by:",
+                result["retrieved_by"]
+            )
+
+            print(
+                "Vector Score:",
+                result["vector_score"]
+            )
+
+            print(
+                "BM25 Score:",
+                result["bm25_score"]
             )

@@ -1,0 +1,1194 @@
+[
+    {
+        "query": "What is machine learning engineering?",
+        "candidates": [
+            {
+                "chunk_id": 4728,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 25,
+                "text": "f\nexamples to represent them (like in video games or word processing software),\n• you build a system that will not have to be improved frequently over time,\n• you can manually ﬁll an exhaustive lookup table by providing the expected output\nfor any input (that is, the number of possible input values is not too large, or getting\noutputs is fast and cheap).\n1.6\nWhat is Machine Learning Engineering\nMachine learning engineering (MLE) is the use of scientiﬁc principles, tools, and techniques of\nmachine learning and traditional software engineering to design and build complex computing\nsystems. MLE encompasses all stages from data collection, to model training, to making the\nmodel available for use by the product or the customers.\nTypically, a data analyst10 is concerned with understanding the business problem, building\na model to solve it, and evaluating the model in a restricted development environment. A\nmachine learning engineer, in turn, is concerned with sourcing the data from various s",
+                "faiss_rank": 1,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4675,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 11,
+                "text": "1\nIntroduction\nThough the reader of this book should have a basic understanding of machine learning,\nit is still important to start with deﬁnitions, so that we are sure that we have a common\nunderstanding of the terms used throughout the book.\nBelow, I repeat some of the deﬁnitions from Chapter 2 of The Hundred-Page Machine\nLearning Book and also give several new ones. If you read my ﬁrst book, some parts of this\nchapter might sound familiar.\nAfter reading this chapter, we will understand the same way such concepts as supervised and\nunsupervised learning. We will agree on the data terminology, such as data used directly and\nindirectly, raw and tidy data, training and holdout data.\nWe will know when to use machine learning, when not to use it, and various forms of machine\nlearning such as model- and instance-based, deep and shallow, classiﬁcation and regression,\nand others.\nFinally, we will deﬁne the scope of machine learning engineering and introduce the machine\nlearning project lifecy",
+                "faiss_rank": 2,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4740,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 28,
+                "text": "tions when machine learning should, probably, not be used: when\nexplainability is needed, when errors are intolerable, when traditional software engineering\nis a less expensive option, when all inputs and outputs can be enumerated and saved in a\ndatabase, and when data is hard to get or too expensive.\nMachine learning engineering (MLE) is the use of scientiﬁc principles, tools, and techniques of\nmachine learning and traditional software engineering to design and build complex computing\nsystems. MLE encompasses all stages from data collection, to model training, to making the\nmodel available for use by the product or the consumers.\nAndriy Burkov\nMachine Learning Engineering - Draft\n20",
+                "faiss_rank": 3,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4669,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 7,
+                "text": "ying one model, while 18 percent of companies are taking longer than 90\ndays — some spending more than a year productionizing. The main challenges organizations\nface when developing ML capabilities, such as model version control, reproducibility, and\nscaling, are rather engineering than scientiﬁc.\nThere are plenty of good books on machine learning, both theoretical and hands-on. From a\ntypical machine learning book, you can learn the types of machine learning, major families of\nalgorithms, how they work, and how to build models from data using those algorithms.\nA typical machine learning book is less concerned with the engineering aspects of implementing\nmachine learning projects. Such questions as data collection, storage, preprocessing, feature\nengineering, as well as testing and debugging of models, their deployment to and retirement\nfrom production, runtime and post-production maintenance, are often left outside the scope\nof machine learning books.\nThis book intends to ﬁll that gap",
+                "faiss_rank": 4,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2204,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 27,
+                "text": "26\nSuccess depends on the learning algorithm used and the\nquality and volume of the training data.\nPart of becoming a machine learning engineer is familiarizing\nyourself with the various learning algorithms and developing\nan intuition for when to use one versus another. That\nintuition comes from experience and from an understanding of\nhow machine learning fits mathematical models to data. This\nchapter represents the first step on that journey. It begins\nwith an overview of machine learning and the most common\ntypes of machine learning models, and it concludes by\nintroducing two popular learning algorithms and using them to\nbuild simple yet fully functional models.\nWhat Is Machine Learning?\nAt an existential level, machine learning (ML) is a means for\nfinding patterns in numbers and exploiting those patterns to\nmake predictions. ML makes it possible to train a model with\nrows or sequences of 1s and 0s, and to learn from the data so\nthat, given a new sequence, the model can predict what",
+                "faiss_rank": 5,
+                "bm25_rank": 3
+            },
+            {
+                "chunk_id": 4786,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 43,
+                "text": "ing and software engineering skills.\nBesides having machine learning and software engineering skills, a machine learning team\nmay include experts in data labeling and data engineering experts. DevOps engineers work\nclosely with machine learning engineers to automate model deployment, loading, monitoring,\nand occasional or regular model maintenance.\nA machine learning projects can fail for many reasons, and most actually do. Typical reasons\nfor a failure are:\n• lack of experienced talent,\n• lack of support by the leadership,\n• missing data infrastructure,\n• data labeling challenge,\n• siloed organizations and lack of collaboration,\n• technically infeasible projects, and\n• lack of alignment between technical and business teams.\nAndriy Burkov\nMachine Learning Engineering - Draft\n14",
+                "faiss_rank": 6,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4731,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 26,
+                "text": "data analyst’s code from rather slow R and Python11 into more eﬃcient Java or C++, scaling\nthis code and making it more robust, packaging the code into an easy-to-deploy versioned\npackage, optimizing the machine learning algorithm to make sure that it generates a model\ncompatible with, and running correctly in, the organization’s production environment.\nIn many organizations, data analysts execute some of the MLE tasks, such as data collection,\ntransformation, and feature engineering. On the other hand, machine learning engineers often\nexecute some of the data analysis tasks, including learning algorithm selection, hyperparameter\ntuning, and model evaluation.\nWorking on a machine learning project is diﬀerent from working on a typical software\nengineering project. Unlike traditional software, where a program’s behavior usually is\ndeterministic, machine learning applications incorporate models whose behavior may naturally\ndegrade over time, or they can start behaving abnormally. Such abn",
+                "faiss_rank": 7,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2162,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 5,
+                "text": "r engineers and other problem solvers\nwho are looking to use machine learning to augment their\nskill set.\nLarry Clement, Assistant Professor, Computing,\nSoftware, and Data Sciences, and former Department\nChair, California Baptist University. Formerly a\nsenior engineer-scientist with the Boeing Corporation\non the C-17 program.\nInfused with author Jeff Prosise’s iconic teaching style\nthat has helped thousands of developers over the years,\nApplied Machine Learning and AI for Engineers layers\ncontext around complex topics and provides easy-to-\nunderstand examples and tutorials. Highly recommended for\nengineers who want to incorporate machine learning\nconcepts and skills in their repertoire.\nVani Mandava, Head of Engineering, Scientific\nSoftware Engineering Center at University of\nWashington eScience Institute",
+                "faiss_rank": 8,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4733,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 26,
+                "text": "ess analyst works with the client12 and the data analyst to transform a business\nproblem into an engineering project.\nThe engineering project may or may not have a\nmachine learning part.\nIn this book, we, of course, consider engineering projects that\nhave some machine learning involved.\nOnce an engineering project is deﬁned, this is where the scope of the machine learning\nengineering starts. In the scope of a broader engineering project, machine learning must\nﬁrst have a well-deﬁned goal. The goal of machine learning is a speciﬁcation of what a\nstatistical model receives as input, what it generates as output, and the criteria of acceptable\n(or unacceptable) behavior of the model.\nThe goal of machine learning is not necessarily the same as the business objective. The\nbusiness objective is what the organization wants to achieve. For example, the business\nobjective of Google with Gmail can be to make Gmail the most-used email service in the\nworld. Google might create multiple machine lear",
+                "faiss_rank": 9,
+                "bm25_rank": 2
+            },
+            {
+                "chunk_id": 2216,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 32,
+                "text": "ing is machine learning performed with\nneural networks. (There are forms of deep learning that\ndon’t involve neural networks—deep Boltzmann machines are\none example—but the vast majority of deep learning today\ninvolves neural networks.) Thus, ML models can be divided",
+                "faiss_rank": 10,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4769,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 39,
+                "text": "or the business.\nDiscuss with the domain experts what they look for in the data to make a speciﬁc business\ndecision; that will help you with feature engineering. Discuss also what clients pay for and\nwhat is a deal-breaker for them; that will help you to translate a business problem into a\nmachine learning problem.\nFinally, there are DevOps engineers. They work closely with machine learning engineers to\nautomate model deployment, loading, monitoring, and occasional or regular model mainte-\nnance. In smaller companies and startups, a DevOps engineer may be part of the machine\nlearning team, or a machine learning engineer could be responsible for the DevOps activities.\nIn big companies, DevOps engineers employed in machine learning projects usually work in\na larger DevOps team. Some companies introduced the MLOps role, whose responsibility\nis to deploy machine learning models in production, upgrade those models, and build data\nprocessing pipelines involving machine learning models.\n2.5\nW",
+                "faiss_rank": null,
+                "bm25_rank": 1
+            },
+            {
+                "chunk_id": 3412,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 661,
+                "text": "660\nTable of Contents\nForeword\nPreface\nWho Should Read This Book\nWhy I Wrote This Book\nRunning the Book’s Code Samples\nNavigating This Book\nConventions Used in This Book\nUsing Code Examples\nO’Reilly Online Learning\nHow to Contact Us\nAcknowledgments\nI. Machine Learning with Scikit-Learn\n1. Machine Learning\nWhat Is Machine Learning?\nMachine Learning Versus Artificial\nIntelligence\nSupervised \nVersus \nUnsupervised\nLearning\nUnsupervised Learning with k-Means Clustering\nApplying \nk-Means \nClustering \nto\nCustomer Data\nSegmenting Customers Using More Than\nTwo Dimensions\nSupervised Learning\nk-Nearest Neighbors\nUsing k-Nearest Neighbors to Classify\nFlowers\nSummary\n2. Regression Models\nLinear Regression\nDecision Trees\nRandom Forests\nGradient-Boosting Machines\nSupport Vector Machines",
+                "faiss_rank": null,
+                "bm25_rank": 4
+            },
+            {
+                "chunk_id": 5554,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 291,
+                "text": "se, will be solved with machine learning. In fact, many problems can be solved more\neasily using a heuristic, a lookup in a database, or traditional software development. You\nprobably should not use machine learning if the system’s every action, decision, or behavior,\nmust be explained. With rare exceptions, machine learning models are blackboxes. They\nwill not tell you why they predicted what they predicted, nor why they didn’t predict today\nwhat they predicted yesterday, nor how to ﬁx these issues.\nAndriy Burkov\nMachine Learning Engineering - Draft\n3",
+                "faiss_rank": null,
+                "bm25_rank": 5
+            },
+            {
+                "chunk_id": 5551,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 291,
+                "text": "10\nConclusion\nIn 2020, machine learning has become a mature and popular tool for solving business problems.\nWhat previously was available only to a handful of organizations, and considered “magic” by\nothers, can today be created and used by a typical organization.\nThanks to open-source code, crowdsourcing, easily accessible books, online courses, and\npublicly available datasets, many scientists, engineers, and even home enthusiasts may now\ntrain machine learning models. If you are lucky, your problem can be solved by writing\nseveral lines of code, as demonstrated in many online tutorials.\nHowever, many things can go wrong in a machine learning project. Most are independent of\nthe technology’s maturity or the analyst’s understanding of the machine learning algorithm.\nMachine learning texts, online tutorials, and courses are devoted to explaining how machine\nlearning algorithms work and how to apply them to a dataset. Your success will probably\ndepend on other factors. What data you can",
+                "faiss_rank": null,
+                "bm25_rank": 6
+            },
+            {
+                "chunk_id": 5151,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 159,
+                "text": "This is usually not what\nAndriy Burkov\nMachine Learning Engineering - Draft\n21",
+                "faiss_rank": null,
+                "bm25_rank": 7
+            },
+            {
+                "chunk_id": 5552,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 291,
+                "text": "online tutorials, and courses are devoted to explaining how machine\nlearning algorithms work and how to apply them to a dataset. Your success will probably\ndepend on other factors. What data you can get and whether you can get enough of it, how\nyou prepare it for learning, what features you engineer, whether your solution is scalable,\nmaintainable, cannot be manipulated by attackers, and doesn’t make costly errors — these\nfactors are much more important for an applied machine learning project.\nYet despite their magnitude, most modern machine learning books and courses often leave\nthese aspects for self-study. Some provide only partial coverage, with just an application to\nsolving a speciﬁc illustrative problem.\nIt’s a signiﬁcant gap in knowledge, and I tried to ﬁll it with this book.\n10.1\nTakeaways\nWhat do I hope the reader takes away after reading this book?\nFirst of all, a strong understanding that all machine learning projects are unique. There’s\nno single recipe that will always w",
+                "faiss_rank": null,
+                "bm25_rank": 8
+            },
+            {
+                "chunk_id": 5569,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 295,
+                "text": "10.2\nWhat to Read Next\nThere are many great books on machine learning and artiﬁcial intelligence. Here, I will give\nyou only several recommendations.\nIf you would like to get hands-on experience with practical machine learning in Python, there\nare two books:\n• “Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow” (2nd edition)\nby Aurélien Géron (O’Reilly Media, 2019), and\n• “Python Machine Learning” (3rd edition) by Sebastian Raschka (Packt Publishing,\n2019).\nFor R, the best choice is “Machine Learning with R” by Brett Lantz (Packt Publishing, 2019).\nTo get a deeper understanding of the underlying math behind various machine learning\nalgorithms, I recommend,\n• “Pattern Recognition and Machine Learning” by Christopher Bishop (Springer, 2006),\nand\n• “An Introduction to Statistical Learning” by Gareth James et al. (Springer, 2013).\nTo get more detailed understanding of deep learning, I recommend,\n• “Neural Networks and Deep Learning” by Michael Nielsen (online, 2005), and\n•",
+                "faiss_rank": null,
+                "bm25_rank": 9
+            },
+            {
+                "chunk_id": 2215,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 32,
+                "text": "changeably today, but in fact, each term\nhas a specific meaning, as shown in Figure 1-5.\nTechnically speaking, machine learning is a subset of AI,\nwhich encompasses not only machine learning models but also\nother types of models such as expert systems (systems that\nmake decisions based on rules that you define) and\nreinforcement learning systems, which learn behaviors by\nrewarding positive outcomes while penalizing negative ones.\nAn example of a reinforcement learning system is AlphaGo,\nwhich was the first computer program to beat a professional\nhuman Go player. It trains on games that have already been\nplayed and learns strategies for winning on its own.\nAs a practical matter, what most people refer to as AI today\nis in fact deep learning, which is a subset of machine\nlearning. Deep learning is machine learning performed with\nneural networks. (There are forms of deep learning that\ndon’t involve neural networks—deep Boltzmann machines are\none example—but the vast majority of deep learn",
+                "faiss_rank": null,
+                "bm25_rank": 10
+            }
+        ]
+    },
+    {
+        "query": "What is deep learning?",
+        "candidates": [
+            {
+                "chunk_id": 2699,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 290,
+                "text": "289\nto the challenges inherent to training neural networks, see the\narticle “How Neural Networks Are Trained”.\nNeural networks are fundamentally simple. Training them is\nmathematically complex. Fortunately, you don’t have to\nunderstand everything that happens during training in order\nto build them. Deep-learning libraries such as Keras and\nTensorFlow insulate you from the math and provide cutting-\nedge optimizers to do the heavy lifting. But now when you use\none of these libraries and it asks you to pick a loss\nfunction and an optimizer, you’ll understand what it’s\nasking for and why.\nSummary\nDeep learning is a subset of machine learning that relies on\ndeep neural networks, and it is the root of modern AI. It’s\nhow computers identify objects in images, translate text and\nspeech into other languages, generate artwork and music, and\nperform other tasks that were virtually impossible a few\nyears ago.\nThe multilayer perceptron is a simple neural network\ncomprising layers of neurons. Each n",
+                "faiss_rank": 1,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2680,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 279,
+                "text": "network is trained, as\nwell as the challenges that training entails\nYou won’t start building and training neural networks just\nyet; that begins in Chapter 9. Before you build a house, you\nneed a foundation to build upon. That foundation begins right\nnow.\nUnderstanding Neural Networks\nNeural networks come in many varieties. Convolutional neural\nnetworks (CNNs), for example, excel at computer-vision tasks\nsuch as classifying images. Recurrent neural networks (RNNs)\nfind application in handwriting recognition and natural\nlanguage processing (NLP), while generative adversarial\nnetworks, or GANs, enable computers to create art, music, and\nother content. But the first step in wrapping your head\naround deep learning is to understand what a neural network\nis and how it works.",
+                "faiss_rank": 2,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2219,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 34,
+                "text": "ity to do things in software that engineers\ncould only have dreamed about as recently as a decade\nago.\nOver time, data scientists have devised special types of\nneural networks that excel at certain tasks, including tasks\ninvolving computer vision—for example, distilling\ninformation from images—and tasks that involve human\nlanguages such as translating English to French. We’ll take\na deep dive into neural networks beginning in Chapter 8, and\nyou’ll learn specifically how deep learning has elevated\nmachine learning to new heights.\nSupervised Versus Unsupervised Learning\nMost ML models fall into one of two broad categories:\nsupervised learning models and unsupervised learning models.\nThe purpose of supervised learning models is to make\npredictions. You train them with labeled data so that they\ncan take future inputs and predict what the labels will be.",
+                "faiss_rank": 3,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 1456,
+                "document_name": "An-Introduction-to-Statistical-Learning-with-Applications-in-Python.pdf",
+                "page_number": 410,
+                "text": "10\nDeep Learning\nThis chapter covers the important topic of deep learning. At the time of deep\nlearning\nwriting (2020), deep learning is a very active area of research in the machine\nlearning and artificial intelligence communities. The cornerstone of deep\nlearning is the neural network.\nneural\nnetwork\nNeural networks rose to fame in the late 1980s. There was a lot of excite-\nment and a certain amount of hype associated with this approach, and they\nwere the impetus for the popular Neural Information Processing Systems\nmeetings (NeurIPS, formerly NIPS) held every year, typically in exotic\nplaces like ski resorts. This was followed by a synthesis stage, where the\nproperties of neural networks were analyzed by machine learners, math-\nematicians and statisticians; algorithms were improved, and the method-\nology stabilized. Then along came SVMs, boosting, and random forests,\nand neural networks fell somewhat from favor. Part of the reason was that\nneural networks required a lot of tinkering",
+                "faiss_rank": 4,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3422,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 2,
+                "text": "MACHINE LEARNING\n“This book provides a \ngreat way to start off \nwith deep learning, \nwith plenty of examples \nand well-explained \nconcepts. A perfect \nbook for readers of all \nlevels who are interested \nin the domain.”\n—Vishwesh Ravi Shrimali\nADAS Engineer\nFundamentals of Deep Learning\nUS $69.99\t\n CAN $87.99\nISBN: 978-1-492-08128-7\nTwitter: @oreillymedia\nlinkedin.com/company/oreilly-media\nyoutube.com/oreillymedia \nWe’re in the midst of an AI research explosion. Deep learning \nhas unlocked superhuman perception to power our push \ntoward creating self-driving vehicles, defeating human experts \nat a variety of difficult games including Go, and even generating \nessays with shockingly coherent prose. But deciphering these \nbreakthroughs often takes a PhD in machine learning and \nmathematics. \nThe updated second edition of this book describes the intuition \nbehind these innovations without jargon or complexity. \nPython-proficient programmers, software engineering \nprofessionals, and computer",
+                "faiss_rank": 5,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3601,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 61,
+                "text": "on to much more\ncomplex problems, such as object recognition and text analysis, our data becomes\nextremely high dimensional, and the relationships we want to capture become highly\nnonlinear. To accommodate this complexity, recent research in machine learning has\nattempted to build models that resemble the structures utilized by our brains. It’s\nessentially this body of research, commonly referred to as deep learning, that has had\nspectacular success in tackling problems in computer vision and natural language\nprocessing. These algorithms not only far surpass other kinds of machine learning\nalgorithms, but also rival (or even exceed) the accuracies achieved by humans.\nThe Neuron\nThe foundational unit of the human brain is the neuron. A tiny piece of the brain,\nabout the size of grain of rice, contains over 10,000 neurons, each of which forms an\naverage of 6,000 connections with other neurons.5 It’s this massive biological network\nthat enables us to experience the  world around us. Our g",
+                "faiss_rank": 6,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3593,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 57,
+                "text": "ng guess. When we were born, our brains provided us with a model that\ndescribed how we would be able to see the world. As we grew up, that model would\ntake in our sensory inputs and make a guess about what we were experiencing. If that\nguess was confirmed by our parents, our model would be reinforced. If our parents\nsaid we were wrong, we’d modify our model to incorporate this new information.\nOver our lifetime, our model becomes more and more accurate as we assimilate more\nand more examples. Obviously all of this happens subconsciously, but we can use this\nto our advantage.\nDeep learning is a subset of a more general field of AI called machine learning, which\nis predicated on this idea of learning from example. In machine learning, instead of\nteaching a computer a massive list of rules to solve the problem, we give it a model\nThe Mechanics of Machine Learning \n| \n41",
+                "faiss_rank": 7,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4713,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 21,
+                "text": "n be saved on disk while\nthe training data can be discarded.\nInstance-based learning algorithms use the whole dataset as the model. One instance-\nbased algorithm frequently used in practice is k-Nearest Neighbors (kNN). In classiﬁcation,\nto predict a label for an input example, the kNN algorithm looks at the close neighborhood\nof the input example in the space of feature vectors and outputs the label that it saw most\noften in this close neighborhood.\n1.3.9\nShallow vs. Deep Learning\nA shallow learning algorithm learns the parameters of the model directly from the features\nof the training examples. Most machine learning algorithms are shallow. The notorious\nexceptions are neural network learning algorithms, speciﬁcally those that build neural\nnetworks with more than one layer between input and output. Such neural networks are\ncalled deep neural networks. In deep neural network learning (or, simply, deep learning),\n9There’s still one label per example, though.\nAndriy Burkov\nMachine Learni",
+                "faiss_rank": 8,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2676,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 278,
+                "text": "277\nChapter 8. Deep Learning\nEvery model in Part I of this book employed classic machine\nlearning algorithms that form the core of ML itself: logistic\nregression, random forests, and so on. Such models are often\nreferred to as traditional machine learning models to\ndifferentiate them from deep-learning models. Recall from\nChapter 1 that deep learning is a subset of machine learning\nthat relies primarily on neural networks, and that most of\nwhat’s considered AI today is accomplished with deep\nlearning. From recognizing objects in photos to real-time\nspeech translation to using computers to generate art, music,\npoetry, and photorealistic faces, deep learning allows\ncomputers to perform feats that traditional machine learning\ndoes not.\nI frequently introduce deep learning to software developers\nby challenging them to devise an algorithmic means for\ndetermining whether a photo contains a dog. If they offer a\nsolution, I’ll counter with a dog picture that foils the\nalgorithm. Traditional ML",
+                "faiss_rank": 9,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3736,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 111,
+                "text": "1 Bengio, Yoshua, et al. “Greedy Layer-Wise Training of Deep Networks.” Advances in Neural Information\nProcessing Systems 19 (2007): 153.\nCHAPTER 6\nBeyond Gradient Descent\nThe Challenges with Gradient Descent\nThe fundamental ideas behind neural networks have existed for decades, but it wasn’t\nuntil recently that neural network-based learning models have become mainstream.\nOur fascination with neural networks has everything to do with their expressiveness,\na quality we’ve unlocked by creating networks with many layers. As we have discussed\nin previous chapters, deep neural networks are able to crack problems that were\npreviously deemed intractable. Training deep neural networks end to end, however, is\nfraught with difficult challenges that took many technological innovations to unravel,\nincluding massive labeled datasets (ImageNet, CIFAR-10, etc.), better hardware in the\nform of GPU acceleration, and several algorithmic discoveries.\nFor several years, researchers resorted to layer-wise",
+                "faiss_rank": 10,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3452,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 9,
+                "text": ". . . . . .  325\nDeep Reinforcement Learning Masters Atari Games                                               325\nWhat Is Reinforcement Learning?                                                                              326\nMarkov Decision Processes                                                                                          328\nPolicy                                                                                                                            329\nFuture Return                                                                                                             330\nDiscounted Future Return                                                                                        331\nExplore Versus Exploit                                                                                                  331\nϵ-Greedy                                                                                                                      333\nAnnealed ϵ-Greedy",
+                "faiss_rank": null,
+                "bm25_rank": 1
+            },
+            {
+                "chunk_id": 3451,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 9,
+                "text": "Understanding the DNC Read Head                                                                          312\nThe DNC Controller Network                                                                                     313\nVisualizing the DNC in Action                                                                                    314\nImplementing the DNC in PyTorch                                                                            317\nTeaching a DNC to Read and Comprehend                                                              321\nSummary                                                                                                                         323\n13. Deep Reinforcement Learning. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  325\nDeep Reinforcement Learning Masters Atari Games                                               325\nWhat Is Reinforcement Learning?",
+                "faiss_rank": null,
+                "bm25_rank": 2
+            },
+            {
+                "chunk_id": 2207,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 28,
+                "text": "happens, is common in\nmachine learning? For that matter, what if the dataset\nresembled the one in Figure 1-2?",
+                "faiss_rank": null,
+                "bm25_rank": 3
+            },
+            {
+                "chunk_id": 3392,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 651,
+                "text": "lassify Flowers,\nAccuracy Measures for Regression Models, Accuracy\nMeasures for Regression Models\ntext classification and processing, What Is Machine\nLearning?, Text Classification-Summary, Text\nClassification-Using Pretrained Models to Classify Text\ncleaning text, Preparing Text for Classification\ndatasets for working with text, What Is Machine\nLearning?\nextracting text from photos, The Computer Vision\nService",
+                "faiss_rank": null,
+                "bm25_rank": 4
+            },
+            {
+                "chunk_id": 4393,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 342,
+                "text": "2 This image is from the OpenAI Gym DQN agent that we build in this chapter: Brockman, Greg, et al.\n“OpenAI Gym.” arXiv preprint arXiv:1606.01540 (2016). https://gym.openai.com\nFigure 13-1. A deep reinforcement learning agent playing Breakout2\nWhat Is Reinforcement Learning?\nReinforcement learning, at its essentials, is learning by interacting with an environ‐\nment. This learning process involves an agent, an environment, and a reward signal.\nThe agent chooses to take an action in the environment, for which the agent is\nrewarded accordingly. The way in which an actor chooses actions is called a policy.\nThe agent wants to increase the reward it receives, and so must learn an optimal\npolicy for interacting with the environment (Figure 13-2).\nReinforcement learning is different from the other types of learning that we have\ncovered thus far. In traditional supervised learning, we are given data and labels,\nand are tasked with predicting labels given data. In unsupervised learning, we are\ng",
+                "faiss_rank": null,
+                "bm25_rank": 5
+            },
+            {
+                "chunk_id": 3333,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 622,
+                "text": "621\nL\n \nL-BFGS (Limited-memory Broyden–Fletcher–Goldfarb–\nShanno) algorithm, Logistic Regression\nlabel column, What Is Machine Learning?\nlabeled data, Supervised Versus Unsupervised Learning,\nSupervised Learning\nLabeled Faces in the Wild (LFW) dataset, What Is Machine\nLearning?, Using SVMs for Facial Recognition,\nUnderstanding Principal Component Analysis, Training a\nNeural Network to Recognize Faces, Facial Recognition\nLabelEncoder class, Categorical Data\nlabels\nand classification models, Classification Models\nencoding in clustering, Segmenting Customers Using\nMore Than Two Dimensions-Segmenting Customers Using\nMore Than Two Dimensions, Categorical Data-\nCategorical Data\nsentiment analysis dataset as labeled, Sentiment\nAnalysis\nunlabeled dataset with PCA, Anomaly Detection, Using\nPCA to Predict Bearing Failure\nlanguage models (see natural language processing)\nLanguage service, Introducing Azure Cognitive Services,\nThe Language Service-The Language Service\nLaplace smoothing, Naive Baye",
+                "faiss_rank": null,
+                "bm25_rank": 6
+            },
+            {
+                "chunk_id": 3412,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 661,
+                "text": "660\nTable of Contents\nForeword\nPreface\nWho Should Read This Book\nWhy I Wrote This Book\nRunning the Book’s Code Samples\nNavigating This Book\nConventions Used in This Book\nUsing Code Examples\nO’Reilly Online Learning\nHow to Contact Us\nAcknowledgments\nI. Machine Learning with Scikit-Learn\n1. Machine Learning\nWhat Is Machine Learning?\nMachine Learning Versus Artificial\nIntelligence\nSupervised \nVersus \nUnsupervised\nLearning\nUnsupervised Learning with k-Means Clustering\nApplying \nk-Means \nClustering \nto\nCustomer Data\nSegmenting Customers Using More Than\nTwo Dimensions\nSupervised Learning\nk-Nearest Neighbors\nUsing k-Nearest Neighbors to Classify\nFlowers\nSummary\n2. Regression Models\nLinear Regression\nDecision Trees\nRandom Forests\nGradient-Boosting Machines\nSupport Vector Machines",
+                "faiss_rank": null,
+                "bm25_rank": 7
+            },
+            {
+                "chunk_id": 4396,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 343,
+                "text": "e to make decisions.\nFurthermore, reinforcement learning applications are at the forefront of many\ncutting-edge technologies, including self-driving cars, robotic motor control, game\nplaying, air-conditioning control, ad placement optimization, and stock market trad‐\ning strategies.\nAs an illustrative exercise, we’ll be tackling a simple reinforcement learning and\ncontrol problem called pole balancing. In this problem, there is a cart with a pole that\nis connected by a hinge, so the pole can swing around the cart. There is an agent that\ncan control the cart, moving it left or right. There is an environment, which rewards\nthe agent when the pole is pointed upward, and penalizes the agent when the pole\nfalls over (Figure 13-3).\nWhat Is Reinforcement Learning? \n| \n327",
+                "faiss_rank": null,
+                "bm25_rank": 8
+            },
+            {
+                "chunk_id": 3321,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 616,
+                "text": "615\nImageDataGenerator\nImageNet dataset, Pretrained CNNs\nimages, classifying and generating, What Is Machine\nLearning?-What Is Machine Learning?\narctic wildlife recognition, Applying Image\nAugmentation to Arctic Wildlife-Applying Image\nAugmentation to Arctic Wildlife\nwith augmentation layers, Image Augmentation with\nAugmentation Layers\ncaption generating, Introducing Azure Cognitive\nServices, The Computer Vision Service-The Computer\nVision Service\nCNNs (see convolutional neural networks)\nextracting text from photos, The Computer Vision\nService\nface detection (see face detection)\nfacial recognition (see facial recognition)\ngenerating with GANs, Understanding Neural Networks\nwith k-nearest neighbors, Using k-Nearest Neighbors\nto Classify Flowers-Using k-Nearest Neighbors to\nClassify Flowers\nobject detection (see object detection)\ntuning hyperparameters, Hyperparameter Tuning-\nHyperparameter Tuning\nIMDB movie dataset, Sentiment Analysis, Using\nTextVectorization in a Sentiment Analysis Mod",
+                "faiss_rank": null,
+                "bm25_rank": 9
+            },
+            {
+                "chunk_id": 2206,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 28,
+                "text": "27\nFigure 1-1. Simple dataset consisting of 0s and 1s\nOne possible solution is that for a given row, if the first\nthree columns contain more 0s than 1s, then the fourth\ncontains a 0. If the first three columns contain more 1s than\n0s, then the answer is 1. By this logic, the empty box should\ncontain a 1. Data scientists refer to the column containing\nanswers (the red column in the figure) as the label column.\nThe remaining columns are feature columns. The goal of a\npredictive model is to find patterns in the rows in the\nfeature columns that allow it to predict what the label will\nbe.\nIf all datasets were this simple, you wouldn’t need machine\nlearning. But real-world datasets are larger and more\ncomplex. What if the dataset contained millions of rows and\nthousands of columns, which, as it happens, is common in\nmachine learning? For that matter, what if the dataset\nresembled the one in Figure 1-2?",
+                "faiss_rank": null,
+                "bm25_rank": 10
+            }
+        ]
+    },
+    {
+        "query": "How do neural networks learn?",
+        "candidates": [
+            {
+                "chunk_id": 3610,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 64,
+                "text": ") is made up of six\nlayers.7 Information flows from one layer to another until sensory input is converted\ninto conceptual understanding. For example, the bottommost layer of the visual\ncortex receives raw visual data from the eyes. This information is processed by each\nlayer and passed on to the next until, in the sixth layer, we conclude whether we are\nlooking at a cat, or a soda can, or an airplane.\nBorrowing from these concepts, we can construct an artificial neural network. A\nneural network comes about when we start hooking up neurons to each other, the\ninput data, and to the output nodes, which correspond to the network’s answer to a\nlearning problem. Figure 3-9 demonstrates a simple example of an artificial neural\nnetwork, similar to the architecture described in McCulloch and Pitt’s work in 1943.\n48 \n| \nChapter 3: The Neural Network",
+                "faiss_rank": 1,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3825,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 142,
+                "text": "Neural Networks",
+                "faiss_rank": 2,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2699,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 290,
+                "text": "289\nto the challenges inherent to training neural networks, see the\narticle “How Neural Networks Are Trained”.\nNeural networks are fundamentally simple. Training them is\nmathematically complex. Fortunately, you don’t have to\nunderstand everything that happens during training in order\nto build them. Deep-learning libraries such as Keras and\nTensorFlow insulate you from the math and provide cutting-\nedge optimizers to do the heavy lifting. But now when you use\none of these libraries and it asks you to pick a loss\nfunction and an optimizer, you’ll understand what it’s\nasking for and why.\nSummary\nDeep learning is a subset of machine learning that relies on\ndeep neural networks, and it is the root of modern AI. It’s\nhow computers identify objects in images, translate text and\nspeech into other languages, generate artwork and music, and\nperform other tasks that were virtually impossible a few\nyears ago.\nThe multilayer perceptron is a simple neural network\ncomprising layers of neurons. Each n",
+                "faiss_rank": 3,
+                "bm25_rank": 8
+            },
+            {
+                "chunk_id": 3632,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 72,
+                "text": "constrained in what they can learn. And the\nmoment we start using nonlinear neurons like the sigmoidal, tanh, or ReLU neurons\nwe talked about at the end of Chapter 3, we can no longer set up a system of linear\nequations. Clearly, we need a better strategy to tackle the training process.\n56 \n| \nChapter 4: Training Feed-Forward Neural Networks",
+                "faiss_rank": 4,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2691,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 286,
+                "text": "285\nFigure 8-5. Adding 2 and 2 with a different set of weights and biases\nGiven a set of weights and biases, using a neural network to\nmake predictions is simplicity itself. It’s little more than\nmultiplication and addition. But coming up with a set of\nweights and biases to begin with is a challenge. It’s why\nneural networks must be trained.\nTraining Neural Networks\nTraining a traditional machine learning model fits it to a\ndataset. Neural networks require training too, and it is\nduring training that weights and biases are calculated.\nWeights are typically initialized with small random numbers.\nBiases are usually initialized with 0s. In its untrained\nstate, a neural network can do little more than generate\nrandom outputs. Once training is complete, the weights and\nbiases enable the network to distinguish dogs from cats,\ntranslate a book review to another language, or do whatever\nelse it was designed to do.\nWhat happens when a neural network is trained? At a high\nlevel, training samples",
+                "faiss_rank": 5,
+                "bm25_rank": 6
+            },
+            {
+                "chunk_id": 2702,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 291,
+                "text": "290\nthemselves—to produce the desired outcome. The\nbackpropagation passes that adjust the weights and biases are\nthe heart of the training regimen. The component responsible\nfor making adjustments is the optimizer; its ultimate goal is\nto find the optimum combination of weights and biases with as\nfew backpropagation passes as possible.\nNow that you understand how neural networks work, the next\nstep is to learn how to build and train them. For that, data\nscientists rely on frameworks such as Keras and TensorFlow.\nChapter 9 begins a deep dive into both.",
+                "faiss_rank": 6,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2700,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 290,
+                "text": "languages, generate artwork and music, and\nperform other tasks that were virtually impossible a few\nyears ago.\nThe multilayer perceptron is a simple neural network\ncomprising layers of neurons. Each neuron turns input into\noutput using a simple mathematical formula. Activation\nfunctions further transform the data as it passes between\nlayers by introducing nonli⁠nearities, enabling neural\nnetworks to fit to a variety of datasets. Hidden layers\nbetween the input layer and the output layer perform the bulk\nof the computational work, and a multilayer perceptron with\nmany hidden layers is referred to as a deep neural network.\nTraining a neural network fits it to a dataset by iteratively\nadjusting weights and biases—the weights connecting neurons\nin adjacent layers and the biases assigned to the neurons",
+                "faiss_rank": 7,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4035,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 223,
+                "text": "ation, description, abstractive summary, etc.).\nThe concept here isn’t something we’ve explored in any of the previous chapters.\nFeed-forward networks are inherently “stateless.” After it’s been trained, the feed-\nforward network is a static structure. It isn’t able to maintain memories between\ninputs, or change how it processes an input based on inputs it has seen in the past.\nTo execute this strategy, we’ll need to reconsider how we construct neural networks\nto create deep learning models that are “stateful.” To do this, we’ll have to return to\nhow we think about networks on an individual neuron level. In the next section, we’ll\nexplore how recurrent connections (as opposed to the feed-forward connections we\nhave studied this far) enable models to maintain state as we describe a class of models\nknown as recurrent neural networks (RNNs).\nRecurrent Neural Networks\nRNNs were first introduced in the 1980s, but have regained popularity recently due\nto several intellectual and hardware bre",
+                "faiss_rank": 8,
+                "bm25_rank": 1
+            },
+            {
+                "chunk_id": 3592,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 57,
+                "text": "if we did know\nhow to do it, the program might be horrendously complicated.\nThe Mechanics of Machine Learning\nTo tackle these classes of problems, we’ll have to use a different kind of approach.\nA lot of the things we learn in school growing up have much in common with\ntraditional computer programs. We learn how to multiply numbers, solve equations,\nand take derivatives by internalizing a set of instructions. But the things we learn at\nan extremely early age, the things we find most natural, are learned by example, not\nby formula.\nFor instance, when we were two years old, our parents didn’t teach us how to recog‐\nnize a dog by measuring the shape of its nose or the contours of its body. We learned\nto recognize a dog by being shown multiple examples and being corrected when we\nmade the wrong guess. When we were born, our brains provided us with a model that\ndescribed how we would be able to see the world. As we grew up, that model would\ntake in our sensory inputs and make a guess about",
+                "faiss_rank": 9,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3609,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 64,
+                "text": "7 Mountcastle, Vernon B. “Modality and Topographic Properties of Single Neurons of Cat’s Somatic Sensory\nCortex.” Journal of Neurophysiology 20.4 (1957): 408-434.\nFigure 3-8. Expressing our exam performance perceptron as a neuron\nFeed-Forward Neural Networks\nAlthough single neurons are more powerful than linear perceptrons, they’re not\nnearly expressive enough to solve complicated learning problems. There’s a reason\nour brain is made of more than one neuron. For example, it is impossible for a single\nneuron to differentiate handwritten digits. So to tackle much more complicated tasks,\nwe’ll have to take our machine learning model even further.\nThe neurons in the human brain are organized in layers. In fact, the human cerebral\ncortex (the structure responsible for most of human intelligence) is made up of six\nlayers.7 Information flows from one layer to another until sensory input is converted\ninto conceptual understanding. For example, the bottommost layer of the visual\ncortex receives",
+                "faiss_rank": 10,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 5118,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 149,
+                "text": "Number of features and examples\nHow many training examples do you have in your dataset? How many features does each\nexample have? Some algorithms, including those used for training neural networks\nand random forests, can handle a huge number of examples and millions of features.\nOthers, like the algorithms for training support vector machines (SVM), can be\nrelatively modest in their capacity.\nNonlinearity of the data\nIs your data linearly separable? Can it be modeled using a linear model? If yes, SVM\nwith the linear kernel, linear and logistic regression can be good choices. Otherwise,\ndeep neural networks or ensemble models might work better.\nTraining speed\nHow much time is a learning algorithm allowed to use to build a model, and how often\nyou will need to retrain the model on updated data? If training takes two days, and\nyou need to retrain your model every 4 hours, then your model will never be up to date.\nNeural networks are slow to train. Simple algorithms like linear and logisti",
+                "faiss_rank": null,
+                "bm25_rank": 2
+            },
+            {
+                "chunk_id": 2680,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 279,
+                "text": "network is trained, as\nwell as the challenges that training entails\nYou won’t start building and training neural networks just\nyet; that begins in Chapter 9. Before you build a house, you\nneed a foundation to build upon. That foundation begins right\nnow.\nUnderstanding Neural Networks\nNeural networks come in many varieties. Convolutional neural\nnetworks (CNNs), for example, excel at computer-vision tasks\nsuch as classifying images. Recurrent neural networks (RNNs)\nfind application in handwriting recognition and natural\nlanguage processing (NLP), while generative adversarial\nnetworks, or GANs, enable computers to create art, music, and\nother content. But the first step in wrapping your head\naround deep learning is to understand what a neural network\nis and how it works.",
+                "faiss_rank": null,
+                "bm25_rank": 3
+            },
+            {
+                "chunk_id": 3736,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 111,
+                "text": "1 Bengio, Yoshua, et al. “Greedy Layer-Wise Training of Deep Networks.” Advances in Neural Information\nProcessing Systems 19 (2007): 153.\nCHAPTER 6\nBeyond Gradient Descent\nThe Challenges with Gradient Descent\nThe fundamental ideas behind neural networks have existed for decades, but it wasn’t\nuntil recently that neural network-based learning models have become mainstream.\nOur fascination with neural networks has everything to do with their expressiveness,\na quality we’ve unlocked by creating networks with many layers. As we have discussed\nin previous chapters, deep neural networks are able to crack problems that were\npreviously deemed intractable. Training deep neural networks end to end, however, is\nfraught with difficult challenges that took many technological innovations to unravel,\nincluding massive labeled datasets (ImageNet, CIFAR-10, etc.), better hardware in the\nform of GPU acceleration, and several algorithmic discoveries.\nFor several years, researchers resorted to layer-wise",
+                "faiss_rank": null,
+                "bm25_rank": 4
+            },
+            {
+                "chunk_id": 3370,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 640,
+                "text": "Understanding Neural Networks, Building Neural\nNetworks with Keras and TensorFlow, Sizing a Neural\nNetwork\nrecurrent neural networks (RNNs), Understanding Neural\nNetworks, Recurrent Neural Networks (RNNs)-Recurrent\nNeural Networks (RNNs)\nRefine Network (R-Net), Face Detection with Convolutional\nNeural Networks\nregion of interest (ROI) alignment, Mask R-CNN\nregion of interest (ROI) pooling, R-CNNs\nregion proposal network (RPN), R-CNNs, R-CNNs\nregion-based CNNs (R-CNNs), R-CNNs-Mask R-CNN",
+                "faiss_rank": null,
+                "bm25_rank": 5
+            },
+            {
+                "chunk_id": 1481,
+                "document_name": "An-Introduction-to-Statistical-Learning-with-Applications-in-Python.pdf",
+                "page_number": 418,
+                "text": "10.3 Convolutional Neural Networks\n407\nFIGURE 10.6. Schematic showing how a convolutional neural network classifies\nan image of a tiger. The network takes in the image and identifies local features.\nIt then combines the local features in order to create compound features, which in\nthis example include eyes and ears. These compound features are used to output\nthe label “tiger”.\naxes are spatial (both are 32-dimensional), and the third is the channel channel\naxis,5 representing the three colors. There is a designated training set of\n50,000 images, and a test set of 10,000.\nA special family of convolutional neural networks (CNNs) has evolved for convolutional\nneural\nnetworks\nclassifying images such as these, and has shown spectacular success on a\nwide range of problems. CNNs mimic to some degree how humans classify\nimages, by recognizing specific features or patterns anywhere in the image\nthat distinguish each particular object class. In this section we give a brief\noverview of how they w",
+                "faiss_rank": null,
+                "bm25_rank": 7
+            },
+            {
+                "chunk_id": 3278,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 594,
+                "text": "ssengers Who Sailed on the Titanic\nactivation functions, Understanding Neural Networks\nReLU, Understanding Neural Networks, Building Neural\nNetworks with Keras and TensorFlow\nsigmoid, Building Neural Networks with Keras and\nTensorFlow, Binary Classification with Neural",
+                "faiss_rank": null,
+                "bm25_rank": 9
+            },
+            {
+                "chunk_id": 3372,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 641,
+                "text": "ion to Predict\nTaxi Fares-Using Regression to Predict Taxi Fares\nregularization, Linear Regression, How Support Vector\nMachines Work, Using SVMs for Facial Recognition\nreinforcement learning, Machine Learning Versus\nArtificial Intelligence\nRekognition service, Azure Cognitive Services\nReLU (rectified linear units), Understanding Neural\nNetworks, Understanding Neural Networks, Building Neural\nNetworks with Keras and TensorFlow, Sizing a Neural\nNetwork",
+                "faiss_rank": null,
+                "bm25_rank": 10
+            }
+        ]
+    },
+    {
+        "query": "What is a neural network?",
+        "candidates": [
+            {
+                "chunk_id": 3610,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 64,
+                "text": ") is made up of six\nlayers.7 Information flows from one layer to another until sensory input is converted\ninto conceptual understanding. For example, the bottommost layer of the visual\ncortex receives raw visual data from the eyes. This information is processed by each\nlayer and passed on to the next until, in the sixth layer, we conclude whether we are\nlooking at a cat, or a soda can, or an airplane.\nBorrowing from these concepts, we can construct an artificial neural network. A\nneural network comes about when we start hooking up neurons to each other, the\ninput data, and to the output nodes, which correspond to the network’s answer to a\nlearning problem. Figure 3-9 demonstrates a simple example of an artificial neural\nnetwork, similar to the architecture described in McCulloch and Pitt’s work in 1943.\n48 \n| \nChapter 3: The Neural Network",
+                "faiss_rank": 1,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2700,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 290,
+                "text": "languages, generate artwork and music, and\nperform other tasks that were virtually impossible a few\nyears ago.\nThe multilayer perceptron is a simple neural network\ncomprising layers of neurons. Each neuron turns input into\noutput using a simple mathematical formula. Activation\nfunctions further transform the data as it passes between\nlayers by introducing nonli⁠nearities, enabling neural\nnetworks to fit to a variety of datasets. Hidden layers\nbetween the input layer and the output layer perform the bulk\nof the computational work, and a multilayer perceptron with\nmany hidden layers is referred to as a deep neural network.\nTraining a neural network fits it to a dataset by iteratively\nadjusting weights and biases—the weights connecting neurons\nin adjacent layers and the biases assigned to the neurons",
+                "faiss_rank": 2,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2681,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 280,
+                "text": "279\nThe simplest type of neural network is the multilayer\nperceptron. It consists of nodes or neurons arranged in\nlayers. The depth of the network is the number of layers; the\nwidth is the number of neurons in each layer, which can be\ndifferent for every layer. State-of-the-art neural networks\nsometimes contain 100 or more layers and thousands of neurons\nin individual layers. A deep neural network is one that\ncontains many layers, and it’s where the term deep learning\nis derived from.\nThe multilayer perceptron in Figure 8-1 contains three\nlayers: an input layer with two neurons, a middle layer (also\nknown as a hidden layer) with three neurons, and an output\nlayer with one neuron. Because the input layer is often\nignored when counting layers, some would argue that this\nnetwork contains two layers, not three. Regardless, the\nnetwork’s job is to take two floating-point values as input\nand produce a single floating-point number as output. Neural\nnetworks work with floating-point numbers. T",
+                "faiss_rank": 3,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4714,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 21,
+                "text": "nd output. Such neural networks are\ncalled deep neural networks. In deep neural network learning (or, simply, deep learning),\n9There’s still one label per example, though.\nAndriy Burkov\nMachine Learning Engineering - Draft\n13",
+                "faiss_rank": 4,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2682,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 280,
+                "text": "layers, not three. Regardless, the\nnetwork’s job is to take two floating-point values as input\nand produce a single floating-point number as output. Neural\nnetworks work with floating-point numbers. They only work\nwith floating-point numbers. As with traditional machine\nlearning models, a neural network can only process non-\nnumeric data—for example, text strings—if the data is first\nconverted to numbers.\nFigure 8-1. Multilayer perceptron\nThe orange arrows in Figure 8-1 represent connections\nbetween neurons. Each neuron in each layer is connected to\neach neuron in the next layer, giving rise to the term fully",
+                "faiss_rank": 5,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3825,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 142,
+                "text": "Neural Networks",
+                "faiss_rank": 6,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4632,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 497,
+                "text": "•Recurrent neural networks (RNNs) are tailored to \nthe processing of sequential data. \n•An RNN processes a sequence of data by\nprocessing each element in the sequence one at \ntime.\n• An RNN network only has a single hidden layer, but it\nalso has a memory buffer that stores the output of\nthis hidden layer for one input and feeds it back into\nthe hidden layer along with the next input from the\nsequence.",
+                "faiss_rank": 7,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4036,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 223,
+                "text": "models\nknown as recurrent neural networks (RNNs).\nRecurrent Neural Networks\nRNNs were first introduced in the 1980s, but have regained popularity recently due\nto several intellectual and hardware breakthroughs that have made them tractable to\ntrain. RNNs are different from feed-forward networks because they leverage a special\ntype of neural layer, known as recurrent layers, that enable the network to maintain\nstate between uses of the network.\nRecurrent Neural Networks \n| \n207",
+                "faiss_rank": 8,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2680,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 279,
+                "text": "network is trained, as\nwell as the challenges that training entails\nYou won’t start building and training neural networks just\nyet; that begins in Chapter 9. Before you build a house, you\nneed a foundation to build upon. That foundation begins right\nnow.\nUnderstanding Neural Networks\nNeural networks come in many varieties. Convolutional neural\nnetworks (CNNs), for example, excel at computer-vision tasks\nsuch as classifying images. Recurrent neural networks (RNNs)\nfind application in handwriting recognition and natural\nlanguage processing (NLP), while generative adversarial\nnetworks, or GANs, enable computers to create art, music, and\nother content. But the first step in wrapping your head\naround deep learning is to understand what a neural network\nis and how it works.",
+                "faiss_rank": 9,
+                "bm25_rank": 2
+            },
+            {
+                "chunk_id": 3612,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 65,
+                "text": "Figure 3-9. A feed-forward neural network with three layers (input, one hidden, and\noutput) and three neurons per layer\nThe bottom layer of the network pulls in the input data. The top layer of neurons\n(output nodes) computes our final answer. The middle layer(s) of neurons are\ncalled the hidden layers, and we let wi, j\nk be the weight of the connection between\nthe itℎ neuron in the ktℎ layer with the jtℎ neuron in the k + 1st layer. These weights\nconstitute our parameter vector, θ, and just as before, our ability to solve problems\nwith neural networks depends on finding the optimal values to plug into θ.\nWe note that in this example, connections traverse only from a lower layer to a\nhigher layer. There are no connections between neurons in the same layer, and\nthere are no connections that transmit data from a higher layer to a lower layer.\nThese neural networks are called feed-forward networks, and we start by discussing\nthese networks because they are the simplest to analyze. We pres",
+                "faiss_rank": 10,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 9970,
+                "document_name": "The Feynman Lectures on Physics, Vol. I,II,III The New Millennium Edition by Richard P. Feynman (z-lib.org).pdf",
+                "page_number": 1511,
+                "text": "part (e).\n(a)\na\nb\nz1\nz2\n=\na\nb\nz3\nz3 = z1 + z2\n(b)\na\nb\nz1\nz2\nz1\nz2\n=\n(c)\na\nb\nz1\nz2\nz3\n= (d)\na\nb\nz1\nz4\n1\nz4\n= 1\nz2\n+ 1\nz3\n=\n(e)\na\nb\nz5\nz5 = z1 + z4\nFig. 22-18. The eﬀective impedance of a ladder.\nNow we may ask an amusing question: What would happen if in the network\nof Fig. 22-18(b) we kept on adding more sections forever—as we indicate by\nthe dashed lines in Fig. 22-19(a)? Can we solve such an inﬁnite network? Well,\n22-27",
+                "faiss_rank": null,
+                "bm25_rank": 1
+            },
+            {
+                "chunk_id": 2679,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 279,
+                "text": "278\ngaming because they deliver high-performance graphics. They\nare also efficient parallel processing machines that allow\ndata scientists to train neural networks in a fraction of the\ntime required on ordinary CPUs. Today, any researcher with a\ncredit card can purchase an NVIDIA GPU or spin up GPUs in\nAzure or AWS and have access to compute power that\nresearchers 20 years ago could only have dreamed of. This,\nmore than anything else, has driven AI’s resurgence and\nprecipitated continual advances in the state of the art.\nThis chapter is the first of several focused on deep\nlearning. In it, you’ll learn:\n \nWhat a neural network is and where the “deep”\nin deep learning comes from\nHow a neural network transforms input into output\nusing simple mathematical operations\nWhat happens when a neural network is trained, as\nwell as the challenges that training entails\nYou won’t start building and training neural networks just\nyet; that begins in Chapter 9. Before you build a house, you\nneed a foun",
+                "faiss_rank": null,
+                "bm25_rank": 3
+            },
+            {
+                "chunk_id": 3385,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 648,
+                "text": "647\nsimilarity matrix, recommender system, Cosine Similarity\nsimple linear regression, Linear Regression\nsizing a neural network, Sizing a Neural Network\nSMT (statistical machine translation), Neural Machine\nTranslation\nsoft mask, Mask R-CNN\nsoftmax activation function, Multiclass Classification,\nBuilding Neural Networks with Keras and TensorFlow\nbuilding CNNs, Understanding CNNs\nclosed- versus open-set classification, Handling\nUnknown Faces: Closed-Set Versus Open-Set\nClassification-Handling Unknown Faces: Closed-Set\nVersus Open-Set Classification\nin facial recognition, Training a Neural Network to\nRecognize Faces\nLSTM encoder-decoders, LSTM Encoder-Decoders\nversus sigmoid activation, Multiclass Classification\nwith Neural Networks\ntransformer-based LMT model, Building a Transformer-\nBased NMT Model\nsoftmax regression, Handling Unknown Faces: Closed-Set\nVersus Open-Set Classification\nspam filtering, What Is Machine Learning?, Supervised\nVersus Unsupervised Learning, Naive Bayes-Spam Fi",
+                "faiss_rank": null,
+                "bm25_rank": 4
+            },
+            {
+                "chunk_id": 3386,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 648,
+                "text": "NMT Model\nsoftmax regression, Handling Unknown Faces: Closed-Set\nVersus Open-Set Classification\nspam filtering, What Is Machine Learning?, Supervised\nVersus Unsupervised Learning, Naive Bayes-Spam Filtering,\nText Classification-Text Classification\nsparse_categorical_crossentropy function, Multiclass\nClassification with Neural Networks, Training a Neural\nNetwork to Recognize Faces\nspatial analysis, The Computer Vision Service",
+                "faiss_rank": null,
+                "bm25_rank": 5
+            },
+            {
+                "chunk_id": 2691,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 286,
+                "text": "285\nFigure 8-5. Adding 2 and 2 with a different set of weights and biases\nGiven a set of weights and biases, using a neural network to\nmake predictions is simplicity itself. It’s little more than\nmultiplication and addition. But coming up with a set of\nweights and biases to begin with is a challenge. It’s why\nneural networks must be trained.\nTraining Neural Networks\nTraining a traditional machine learning model fits it to a\ndataset. Neural networks require training too, and it is\nduring training that weights and biases are calculated.\nWeights are typically initialized with small random numbers.\nBiases are usually initialized with 0s. In its untrained\nstate, a neural network can do little more than generate\nrandom outputs. Once training is complete, the weights and\nbiases enable the network to distinguish dogs from cats,\ntranslate a book review to another language, or do whatever\nelse it was designed to do.\nWhat happens when a neural network is trained? At a high\nlevel, training samples",
+                "faiss_rank": null,
+                "bm25_rank": 6
+            },
+            {
+                "chunk_id": 3391,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 651,
+                "text": "650\ntensor arrays, Neural Networks\ntensor processing units (TPUs), Deep Learning\nTensorBoard, Keras Callbacks\ntensordot function, Using Keras and TensorFlow to Build\nCNNs\nTensorFlow, Training Neural Networks\n(see also Keras API)\nbuilding neural networks with, Building Neural\nNetworks with Keras and TensorFlow-Using a Neural\nNetwork to Predict Taxi Fares\nCNNs, Using Keras and TensorFlow to Build CNNs-Using\nKeras and TensorFlow to Build CNNs\nconverting BERT tokenized inputs into, Fine-Tuning\nBERT to Perform Sentiment Analysis\nsaving models, Saving and Loading Models, Using\nTextVectorization in a Sentiment Analysis Model\nTensorFlow Lite, Audio Classification with CNNs\nterm frequency-inverse document frequency (TF-IDF),\nPreparing Text for Classification\ntest set, Using k-Nearest Neighbors to Classify Flowers,\nAccuracy Measures for Regression Models, Accuracy\nMeasures for Regression Models\ntext classification and processing, What Is Machine\nLearning?, Text Classification-Summary, Text\nClass",
+                "faiss_rank": null,
+                "bm25_rank": 7
+            },
+            {
+                "chunk_id": 2699,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 290,
+                "text": "289\nto the challenges inherent to training neural networks, see the\narticle “How Neural Networks Are Trained”.\nNeural networks are fundamentally simple. Training them is\nmathematically complex. Fortunately, you don’t have to\nunderstand everything that happens during training in order\nto build them. Deep-learning libraries such as Keras and\nTensorFlow insulate you from the math and provide cutting-\nedge optimizers to do the heavy lifting. But now when you use\none of these libraries and it asks you to pick a loss\nfunction and an optimizer, you’ll understand what it’s\nasking for and why.\nSummary\nDeep learning is a subset of machine learning that relies on\ndeep neural networks, and it is the root of modern AI. It’s\nhow computers identify objects in images, translate text and\nspeech into other languages, generate artwork and music, and\nperform other tasks that were virtually impossible a few\nyears ago.\nThe multilayer perceptron is a simple neural network\ncomprising layers of neurons. Each n",
+                "faiss_rank": null,
+                "bm25_rank": 8
+            },
+            {
+                "chunk_id": 3361,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 636,
+                "text": "635\npredict method, Using k-Nearest Neighbors to Classify\nFlowers, Logistic Regression, Spam Filtering, Building\nNeural Networks with Keras and TensorFlow\npredictions, What Is Machine Learning?\naccuracy measures, Training a Neural Network to\nDetect Credit Card Fraud-Training a Neural Network to\nDetect Credit Card Fraud, Training a CNN to Recognize\nArctic Wildlife\nanomaly detection, Using PCA to Predict Bearing\nFailure-Using PCA to Predict Bearing Failure\nconfusion matrix, Accuracy Measures for\nClassification Models, Using SVMs for Facial\nRecognition-Using SVMs for Facial Recognition\ndecision trees, Decision Trees-Decision Trees\nk-nearest neighbors for image classification, Using\nk-Nearest Neighbors to Classify Flowers\nwith neural network, Making Predictions-Making\nPredictions\npipelining, Pipelining\nregression models, Using Regression to Predict Taxi\nFares-Using Regression to Predict Taxi Fares\ntaxi fares, Using Regression to Predict Taxi Fares-\nUsing Regression to Predict Taxi Fares, U",
+                "faiss_rank": null,
+                "bm25_rank": 9
+            },
+            {
+                "chunk_id": 4237,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 291,
+                "text": "CHAPTER 11\nMethods in Interpretability\nOverview\nThe field of interpretability is broad and can be uniquely applied to a variety of\ntasks. Simply put, interpretability defines a model’s ability to “explain” its decision\nmaking to a third party. There are many modern architectures that do not have this\ncapability just by construction. A neural network, for example, is a prime example\nof one of these modern architectures. The term “opaque” is often used to describe\nneural networks, both in media and in literature. This is because, without post hoc\ntechniques to explain the final classification or regression result of a neural network,\nthe data transformations occurring within the trained model are unclear and difficult\nfor the end user to interpret. All we know is that we fed in an example and out\npopped a result. Although we can examine the learned weights of a neural network,\nthe composition of all of these weights is an extremely complex function. This makes\nit difficult to tell what p",
+                "faiss_rank": null,
+                "bm25_rank": 10
+            }
+        ]
+    },
+    {
+        "query": "What is the difference between machine learning and deep learning?",
+        "candidates": [
+            {
+                "chunk_id": 2219,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 34,
+                "text": "ity to do things in software that engineers\ncould only have dreamed about as recently as a decade\nago.\nOver time, data scientists have devised special types of\nneural networks that excel at certain tasks, including tasks\ninvolving computer vision—for example, distilling\ninformation from images—and tasks that involve human\nlanguages such as translating English to French. We’ll take\na deep dive into neural networks beginning in Chapter 8, and\nyou’ll learn specifically how deep learning has elevated\nmachine learning to new heights.\nSupervised Versus Unsupervised Learning\nMost ML models fall into one of two broad categories:\nsupervised learning models and unsupervised learning models.\nThe purpose of supervised learning models is to make\npredictions. You train them with labeled data so that they\ncan take future inputs and predict what the labels will be.",
+                "faiss_rank": 1,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4713,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 21,
+                "text": "n be saved on disk while\nthe training data can be discarded.\nInstance-based learning algorithms use the whole dataset as the model. One instance-\nbased algorithm frequently used in practice is k-Nearest Neighbors (kNN). In classiﬁcation,\nto predict a label for an input example, the kNN algorithm looks at the close neighborhood\nof the input example in the space of feature vectors and outputs the label that it saw most\noften in this close neighborhood.\n1.3.9\nShallow vs. Deep Learning\nA shallow learning algorithm learns the parameters of the model directly from the features\nof the training examples. Most machine learning algorithms are shallow. The notorious\nexceptions are neural network learning algorithms, speciﬁcally those that build neural\nnetworks with more than one layer between input and output. Such neural networks are\ncalled deep neural networks. In deep neural network learning (or, simply, deep learning),\n9There’s still one label per example, though.\nAndriy Burkov\nMachine Learni",
+                "faiss_rank": 2,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2217,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 33,
+                "text": "32\ninto conventional models that use learning algorithms to\nmodel patterns in data, and deep-learning models that use\nneural networks to do the same.\nFigure 1-5. Relationship between machine learning, deep learning, and AI\nA BRIEF HISTORY OF AI\nML and AI have surged in popularity in recent years. AI\nwas a big deal in the 1980s, when it was widely believed\nthat computers would soon be able to mimic the human",
+                "faiss_rank": 3,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4682,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 13,
+                "text": "deﬁned as”.\nThe Euclidean norm of a vector x, denoted by ∥x∥, characterizes the “size” or the “length”\nof the vector. It’s given by\nqPD\nj=1\n\u0000x(j)\u00012.\nThe distance between two vectors a and b is given by the Euclidean distance:\n∥a −b∥\ndef\n=\nv\nu\nu\nt\nN\nX\ni=1\n\u0000a(i) −b(i)\u00012.\n1.2\nWhat is Machine Learning\nMachine learning is a subﬁeld of computer science that is concerned with building al-\ngorithms that, to be useful, rely on a collection of examples of some phenomenon. These\nexamples can come from nature, be handcrafted by humans, or generated by another algo-\nrithm.\nMachine learning can also be deﬁned as the process of solving a practical problem by,\n1) collecting a dataset, and\n2) algorithmically training a statistical model based on that dataset.\nThat statistical model is assumed to be used somehow to solve the practical problem. To\nsave keystrokes, I use the terms “learning” and “machine learning” interchangeably. For the\nsame reason, I often say “model” referring to a statistical model.",
+                "faiss_rank": 4,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4675,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 11,
+                "text": "1\nIntroduction\nThough the reader of this book should have a basic understanding of machine learning,\nit is still important to start with deﬁnitions, so that we are sure that we have a common\nunderstanding of the terms used throughout the book.\nBelow, I repeat some of the deﬁnitions from Chapter 2 of The Hundred-Page Machine\nLearning Book and also give several new ones. If you read my ﬁrst book, some parts of this\nchapter might sound familiar.\nAfter reading this chapter, we will understand the same way such concepts as supervised and\nunsupervised learning. We will agree on the data terminology, such as data used directly and\nindirectly, raw and tidy data, training and holdout data.\nWe will know when to use machine learning, when not to use it, and various forms of machine\nlearning such as model- and instance-based, deep and shallow, classiﬁcation and regression,\nand others.\nFinally, we will deﬁne the scope of machine learning engineering and introduce the machine\nlearning project lifecy",
+                "faiss_rank": 5,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2676,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 278,
+                "text": "277\nChapter 8. Deep Learning\nEvery model in Part I of this book employed classic machine\nlearning algorithms that form the core of ML itself: logistic\nregression, random forests, and so on. Such models are often\nreferred to as traditional machine learning models to\ndifferentiate them from deep-learning models. Recall from\nChapter 1 that deep learning is a subset of machine learning\nthat relies primarily on neural networks, and that most of\nwhat’s considered AI today is accomplished with deep\nlearning. From recognizing objects in photos to real-time\nspeech translation to using computers to generate art, music,\npoetry, and photorealistic faces, deep learning allows\ncomputers to perform feats that traditional machine learning\ndoes not.\nI frequently introduce deep learning to software developers\nby challenging them to devise an algorithmic means for\ndetermining whether a photo contains a dog. If they offer a\nsolution, I’ll counter with a dog picture that foils the\nalgorithm. Traditional ML",
+                "faiss_rank": 6,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2215,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 32,
+                "text": "changeably today, but in fact, each term\nhas a specific meaning, as shown in Figure 1-5.\nTechnically speaking, machine learning is a subset of AI,\nwhich encompasses not only machine learning models but also\nother types of models such as expert systems (systems that\nmake decisions based on rules that you define) and\nreinforcement learning systems, which learn behaviors by\nrewarding positive outcomes while penalizing negative ones.\nAn example of a reinforcement learning system is AlphaGo,\nwhich was the first computer program to beat a professional\nhuman Go player. It trains on games that have already been\nplayed and learns strategies for winning on its own.\nAs a practical matter, what most people refer to as AI today\nis in fact deep learning, which is a subset of machine\nlearning. Deep learning is machine learning performed with\nneural networks. (There are forms of deep learning that\ndon’t involve neural networks—deep Boltzmann machines are\none example—but the vast majority of deep learn",
+                "faiss_rank": 7,
+                "bm25_rank": 6
+            },
+            {
+                "chunk_id": 3339,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 625,
+                "text": "624\nversus artificial intelligence, Machine Learning\nVersus Artificial Intelligence-Machine Learning\nVersus Artificial Intelligence\noperationalizing (see operationalizing ML models)\nprogramming resources, Running the Book’s Code\nSamples\nspam filter example, What Is Machine Learning?\nsupervised models (see supervised learning models)\nand testing data, Using k-Nearest Neighbors to\nClassify Flowers\ntypes of learning, Supervised Versus Unsupervised\nLearning-Using k-Nearest Neighbors to Classify\nFlowers\nunsupervised models (see unsupervised learning\nmodels)\nMAE (mean absolute error), Building Neural Networks with\nKeras and TensorFlow, Building Neural Networks with Keras\nand TensorFlow\nmake_blobs function, Unsupervised Learning with k-Means\nClustering\nmake_pipeline function, Pipelining, Consuming a Python\nModel from a Python Client\nManhattan distance, Using k-Nearest Neighbors to Classify\nFlowers\nmAP (mean Average Precision), Training a Custom Object\nDetection Model with the Custom Vision Se",
+                "faiss_rank": 8,
+                "bm25_rank": 8
+            },
+            {
+                "chunk_id": 2680,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 279,
+                "text": "network is trained, as\nwell as the challenges that training entails\nYou won’t start building and training neural networks just\nyet; that begins in Chapter 9. Before you build a house, you\nneed a foundation to build upon. That foundation begins right\nnow.\nUnderstanding Neural Networks\nNeural networks come in many varieties. Convolutional neural\nnetworks (CNNs), for example, excel at computer-vision tasks\nsuch as classifying images. Recurrent neural networks (RNNs)\nfind application in handwriting recognition and natural\nlanguage processing (NLP), while generative adversarial\nnetworks, or GANs, enable computers to create art, music, and\nother content. But the first step in wrapping your head\naround deep learning is to understand what a neural network\nis and how it works.",
+                "faiss_rank": 9,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2214,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 32,
+                "text": "31\nThese facial images come from a famous public dataset called\nLabeled Faces in the Wild, or LFW for short. It is one of\ncountless labeled datasets that are published in various\nplaces for public consumption. Machine learning isn’t hard\nwhen you have labeled datasets to work with—datasets that\nothers (often grad students) have laboriously spent hours\nlabeling with 1s and 0s. In the real world, engineers\nsometimes spend the bulk of their time generating these\ndatasets. One of the more popular repositories for public\ndatasets is Kaggle.com, which makes lots of useful datasets\navailable and holds competitions allowing budding ML\npractitioners to test their skills.\nMachine Learning Versus Artificial\nIntelligence\nThe terms machine learning and artificial intelligence (AI)\nare used almost interchangeably today, but in fact, each term\nhas a specific meaning, as shown in Figure 1-5.\nTechnically speaking, machine learning is a subset of AI,\nwhich encompasses not only machine learning models bu",
+                "faiss_rank": 10,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3452,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 9,
+                "text": ". . . . . .  325\nDeep Reinforcement Learning Masters Atari Games                                               325\nWhat Is Reinforcement Learning?                                                                              326\nMarkov Decision Processes                                                                                          328\nPolicy                                                                                                                            329\nFuture Return                                                                                                             330\nDiscounted Future Return                                                                                        331\nExplore Versus Exploit                                                                                                  331\nϵ-Greedy                                                                                                                      333\nAnnealed ϵ-Greedy",
+                "faiss_rank": null,
+                "bm25_rank": 1
+            },
+            {
+                "chunk_id": 3412,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 661,
+                "text": "660\nTable of Contents\nForeword\nPreface\nWho Should Read This Book\nWhy I Wrote This Book\nRunning the Book’s Code Samples\nNavigating This Book\nConventions Used in This Book\nUsing Code Examples\nO’Reilly Online Learning\nHow to Contact Us\nAcknowledgments\nI. Machine Learning with Scikit-Learn\n1. Machine Learning\nWhat Is Machine Learning?\nMachine Learning Versus Artificial\nIntelligence\nSupervised \nVersus \nUnsupervised\nLearning\nUnsupervised Learning with k-Means Clustering\nApplying \nk-Means \nClustering \nto\nCustomer Data\nSegmenting Customers Using More Than\nTwo Dimensions\nSupervised Learning\nk-Nearest Neighbors\nUsing k-Nearest Neighbors to Classify\nFlowers\nSummary\n2. Regression Models\nLinear Regression\nDecision Trees\nRandom Forests\nGradient-Boosting Machines\nSupport Vector Machines",
+                "faiss_rank": null,
+                "bm25_rank": 2
+            },
+            {
+                "chunk_id": 2204,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 27,
+                "text": "26\nSuccess depends on the learning algorithm used and the\nquality and volume of the training data.\nPart of becoming a machine learning engineer is familiarizing\nyourself with the various learning algorithms and developing\nan intuition for when to use one versus another. That\nintuition comes from experience and from an understanding of\nhow machine learning fits mathematical models to data. This\nchapter represents the first step on that journey. It begins\nwith an overview of machine learning and the most common\ntypes of machine learning models, and it concludes by\nintroducing two popular learning algorithms and using them to\nbuild simple yet fully functional models.\nWhat Is Machine Learning?\nAt an existential level, machine learning (ML) is a means for\nfinding patterns in numbers and exploiting those patterns to\nmake predictions. ML makes it possible to train a model with\nrows or sequences of 1s and 0s, and to learn from the data so\nthat, given a new sequence, the model can predict what",
+                "faiss_rank": null,
+                "bm25_rank": 3
+            },
+            {
+                "chunk_id": 3451,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 9,
+                "text": "Understanding the DNC Read Head                                                                          312\nThe DNC Controller Network                                                                                     313\nVisualizing the DNC in Action                                                                                    314\nImplementing the DNC in PyTorch                                                                            317\nTeaching a DNC to Read and Comprehend                                                              321\nSummary                                                                                                                         323\n13. Deep Reinforcement Learning. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  325\nDeep Reinforcement Learning Masters Atari Games                                               325\nWhat Is Reinforcement Learning?",
+                "faiss_rank": null,
+                "bm25_rank": 4
+            },
+            {
+                "chunk_id": 2207,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 28,
+                "text": "happens, is common in\nmachine learning? For that matter, what if the dataset\nresembled the one in Figure 1-2?",
+                "faiss_rank": null,
+                "bm25_rank": 5
+            },
+            {
+                "chunk_id": 3392,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 651,
+                "text": "lassify Flowers,\nAccuracy Measures for Regression Models, Accuracy\nMeasures for Regression Models\ntext classification and processing, What Is Machine\nLearning?, Text Classification-Summary, Text\nClassification-Using Pretrained Models to Classify Text\ncleaning text, Preparing Text for Classification\ndatasets for working with text, What Is Machine\nLearning?\nextracting text from photos, The Computer Vision\nService",
+                "faiss_rank": null,
+                "bm25_rank": 7
+            },
+            {
+                "chunk_id": 4213,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 283,
+                "text": "as the partition function.\nHow can we go about learning such an unnormalized probability distribution?\nResearchers have presented many approaches for learning qθ x throughout the\nhistory of machine learning and inference, but one particular method starts to bridge\nthe gap between learning an unnormalized probability distribution and sampling\nfrom its normalized version via a process like Langevin dynamics. Score matching, or\nthe idea of learning qθ x via minimizing the difference between the score function\nof qθ x and the score function of the true distribution p x , was first proposed by\nHyvarinen in 2005.\nHere, we show that minimizing the difference as stated is equivalent to minimizing\nthe difference between the score function of pθ x and the score function of p x :\n∇x log qθ x = ∇x log pθ x * Z θ\n= ∇x log pθ x + ∇x log Z θ\n= ∇x log pθ x\nIt turns out that the score function of qθ x is the same as the score function of\npθ x , ∀x. This is because the log first separates the product o",
+                "faiss_rank": null,
+                "bm25_rank": 9
+            },
+            {
+                "chunk_id": 3804,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 135,
+                "text": "machine learning approach, where the computer did all of the heavy lifting. In this\ncompromise, a human would choose the features (perhaps hundreds or thousands)\nthat they believed were important in making a classification decision. In doing so, the\nhuman would be producing a lower-dimensional representation of the same learning\nproblem. The machine learning algorithm would then use these new feature vectors\nto make classification decisions. Because the feature extraction process improves the\nsignal-to-noise ratio (assuming the appropriate features are picked), this approach\nhad quite a bit of success compared to the state-of-the-art at the time.\nViola and Jones had the insight that faces had certain patterns of light and dark\npatches that they could exploit. For example, there is a difference in light intensity\nbetween the eye region and the upper cheeks. There is also a difference in light\nintensity between the nose bridge and the two eyes on either side. These detectors are\nshown in",
+                "faiss_rank": null,
+                "bm25_rank": 10
+            }
+        ]
+    },
+    {
+        "query": "What is overfitting in machine learning?",
+        "candidates": [
+            {
+                "chunk_id": 2791,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 338,
+                "text": "a neural network is fitting too tightly to\nthe training data, one way to combat overfitting and increase\nthe network’s ability to generalize is to reduce the\ncomplexity of the network: reduce the number of layers, the\nnumber of neurons in individual layers, or both. Another",
+                "faiss_rank": 1,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 5179,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 170,
+                "text": "4\n2\n0\n2\n10\n0\n10\n20\n30\ndegree 1 (underfit)\ntraining examples\nUnderﬁtting\n4\n2\n0\n2\n10\n0\n10\n20\n30\ndegree 2 (fit)\ntraining examples\nGood ﬁt\n4\n2\n0\n2\n10\n0\n10\n20\n30\ndegree 15 (overfit)\ntraining examples\nOverﬁtting\nFigure 9: Examples of underﬁtting (linear model), good ﬁt (quadratic model), and overﬁtting\n(polynomial of degree 15).\n5.8.2\nOverﬁtting\nOverﬁtting is another problem a model can exhibit. The model that overﬁts usually predicts\nthe training data labels very well, but works poorly on the holdout data.\nAn example of overﬁtting in regression is shown in Figure 9 (right). The regression line\npredicts almost perfectly the targets for almost all training examples, but will likely make\nsigniﬁcant errors on new data if you decide to use it for predictions.\nYou will ﬁnd another name for overﬁtting in the literature: high variance. The model\nis unduly sensitive to small ﬂuctuations in the training set. If you sampled the training\ndata diﬀerently, the result would be a signiﬁcantly diﬀerent mode",
+                "faiss_rank": 2,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 5180,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 170,
+                "text": "in the literature: high variance. The model\nis unduly sensitive to small ﬂuctuations in the training set. If you sampled the training\ndata diﬀerently, the result would be a signiﬁcantly diﬀerent model. These overﬁtting models\nperform poorly on the holdout data, since holdout and training data are sampled from the\ndataset independently of one another. So, the small ﬂuctuations in the training and holdout\ndata are likely to be diﬀerent.\nSeveral reasons can lead to overﬁtting:\n• the model is too complex for the data. Very tall decision trees or a very deep neural\nnetwork often overﬁt;\n• there are too many features and few training examples; and\n• you don’t regularize enough.\nSeveral solutions to overﬁtting are possible:\n• use a simpler model. Try linear instead of polynomial regression, or SVM with a\nlinear kernel instead of radial basis function (RBF), or a neural network with fewer\nlayers/units;5\n5While reducing the number of model parameters is generally recommended to reduce overﬁtti",
+                "faiss_rank": 3,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 145,
+                "document_name": "An-Introduction-to-Statistical-Learning-with-Applications-in-Python.pdf",
+                "page_number": 44,
+                "text": "en\na given method yields a small training MSE but a large test MSE, we are\nsaid to be overfitting the data. This happens because our statistical learning\nprocedure is working too hard to find patterns in the training data, and\nmay be picking up some patterns that are just caused by random chance\nrather than by true properties of the unknown function f. When we overfit\nthe training data, the test MSE will be very large because the supposed",
+                "faiss_rank": 4,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2770,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 329,
+                "text": "328\naccuracy and validation accuracy would be close to 0 in the\nlater stages of training a neural network. In the real world,\nit rarely happens that way. Training accuracy for the model\nin the previous section approached 100%, but validation\naccuracy probably peaked between 80% and 85%. This means the\nmodel isn’t generalizing as well as you’d like. It learned\nthe training data very well, but when presented with data it\nhadn’t seen before (the validation data), it underperformed.\nThis may be a sign that the model is overfitting. In the end,\nit’s not training accuracy that matters; it’s how\naccurately the model responds to new data.\nOne way to combat overfitting is to reduce the depth of the\nnetwork, the width of individual layers, or both. Fewer\nneurons means fewer trainable parameters, and fewer\nparameters makes it harder for the network to fit too tightly\nto the training data.\nAnother way to guard against overfitting is to introduce\ndropout to the network. Dropout randomly drops conne",
+                "faiss_rank": 5,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3664,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 86,
+                "text": "3 Nelder, John A., and Roger Mead. “A Simplex Method for Function Minimization.” The Computer Journal 7.4\n(1965): 308-313.\nof hyperparameters with the best performance on the validation set and report the\naccuracy of the model trained with the best combination on the test set.3\nWith this in mind, before we jump into describing the various ways to directly\ncombat overfitting, let’s outline the workflow we use when building and training\ndeep learning models. The workflow is described in detail in Figure 4-14. It is a\ntad intricate, but it’s critical to understand the pipeline to ensure that we’re properly\ntraining our neural networks.\nFigure 4-14. Detailed workflow for training and evaluating a deep learning model\nFirst, we define our problem rigorously. This involves determining our inputs, the\npotential outputs, and the vectorized representations of both. For instance, let’s say\nour goal was to train a deep learning model to identify cancer. Our input would be an\nRBG image, which can b",
+                "faiss_rank": 6,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3658,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 84,
+                "text": "It’s already quite apparent from these images that as the number of connections in\nour network increases, so does our propensity to overfit to the data. We can similarly\nsee the phenomenon of overfitting as we make our neural networks deep. These\nresults are shown in Figure 4-11.\nFigure 4-11. Neural networks with one, two, and four hidden layers (in that order) of\nthree neurons each\nThis leads to three major observations. First, the machine learning engineer is always\nworking with a direct trade-off between overfitting and model complexity. If the\nmodel isn’t complex enough, it may not be powerful enough to capture all of the\nuseful information necessary to solve a problem. However, if our model is very\ncomplex (especially if we have a limited amount of data at our disposal), we run the\nrisk of overfitting. Deep learning takes the approach of solving complex problems\nwith complex models and taking additional countermeasures to prevent overfitting.\nWe’ll see a lot of these measures in t",
+                "faiss_rank": 7,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 119,
+                "document_name": "An-Introduction-to-Statistical-Learning-with-Applications-in-Python.pdf",
+                "page_number": 39,
+                "text": "2.1 What Is Statistical Learning?\n25\nWe have established that when inference is the goal, there are clear ad-\nvantages to using simple and relatively inflexible statistical learning meth-\nods. In some settings, however, we are only interested in prediction, and\nthe interpretability of the predictive model is simply not of interest. For\ninstance, if we seek to develop an algorithm to predict the price of a\nstock, our sole requirement for the algorithm is that it predict accurately—\ninterpretability is not a concern. In this setting, we might expect that it\nwill be best to use the most flexible model available. Surprisingly, this is\nnot always the case! We will often obtain more accurate predictions using\na less flexible method. This phenomenon, which may seem counterintu-\nitive at first glance, has to do with the potential for overfitting in highly\nflexible methods. We saw an example of overfitting in Figure 2.6. We will\ndiscuss this very important concept further in Section 2.2 and thr",
+                "faiss_rank": 8,
+                "bm25_rank": 3
+            },
+            {
+                "chunk_id": 3655,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 82,
+                "text": "bjectively but also\nquantitatively (measured using the squared error metric). This leads to an interesting\npoint about training and evaluating machine learning models. By building a very\ncomplex model, it’s quite easy to perfectly fit our training dataset because we give\nour model enough degrees of freedom to contort itself to fit the observations in the\ntraining set. But when we evaluate such a complex model on new data, it performs\npoorly. In other words, the model does not generalize well. This is a phenomenon\ncalled overfitting, and it is one of the biggest challenges that a machine learning\nengineer must combat. This becomes an even more significant issue in deep learning,\nwhere our neural networks have large numbers of layers containing many neurons.\n66 \n| \nChapter 4: Training Feed-Forward Neural Networks",
+                "faiss_rank": 9,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2295,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 75,
+                "text": "74\nDecision trees are highly prone to overfitting. If allowed to\ngrow large enough, a decision tree can essentially memorize\nthe training data. It might appear to be accurate, but if\nit’s fit too tightly to the training data, it might not\ngeneralize well. That means it won’t be as accurate when\nit’s asked to make predictions with data it hasn’t seen\nbefore. Figure 2-5 shows a decision tree fit to the income-\nversus-experience dataset with no constraints on depth. The\njagged path followed by the red line as it passes through all\nthe points is a clear sign of overfitting. Overfitting is the\nbane of data scientists. The only thing worse than a model\nthat’s inaccurate is one that appears to be accurate but in\nreality is not.\nFigure 2-5. Decision tree overfit to the training data\nOne way to prevent overfitting when using decision trees is\nto constrain their growth so that they can’t memorize the\ntraining data. Another way is to use groups of decision trees\ncalled random forests.",
+                "faiss_rank": 10,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2207,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 28,
+                "text": "happens, is common in\nmachine learning? For that matter, what if the dataset\nresembled the one in Figure 1-2?",
+                "faiss_rank": null,
+                "bm25_rank": 1
+            },
+            {
+                "chunk_id": 3392,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 651,
+                "text": "lassify Flowers,\nAccuracy Measures for Regression Models, Accuracy\nMeasures for Regression Models\ntext classification and processing, What Is Machine\nLearning?, Text Classification-Summary, Text\nClassification-Using Pretrained Models to Classify Text\ncleaning text, Preparing Text for Classification\ndatasets for working with text, What Is Machine\nLearning?\nextracting text from photos, The Computer Vision\nService",
+                "faiss_rank": null,
+                "bm25_rank": 2
+            },
+            {
+                "chunk_id": 3412,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 661,
+                "text": "660\nTable of Contents\nForeword\nPreface\nWho Should Read This Book\nWhy I Wrote This Book\nRunning the Book’s Code Samples\nNavigating This Book\nConventions Used in This Book\nUsing Code Examples\nO’Reilly Online Learning\nHow to Contact Us\nAcknowledgments\nI. Machine Learning with Scikit-Learn\n1. Machine Learning\nWhat Is Machine Learning?\nMachine Learning Versus Artificial\nIntelligence\nSupervised \nVersus \nUnsupervised\nLearning\nUnsupervised Learning with k-Means Clustering\nApplying \nk-Means \nClustering \nto\nCustomer Data\nSegmenting Customers Using More Than\nTwo Dimensions\nSupervised Learning\nk-Nearest Neighbors\nUsing k-Nearest Neighbors to Classify\nFlowers\nSummary\n2. Regression Models\nLinear Regression\nDecision Trees\nRandom Forests\nGradient-Boosting Machines\nSupport Vector Machines",
+                "faiss_rank": null,
+                "bm25_rank": 4
+            },
+            {
+                "chunk_id": 2204,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 27,
+                "text": "26\nSuccess depends on the learning algorithm used and the\nquality and volume of the training data.\nPart of becoming a machine learning engineer is familiarizing\nyourself with the various learning algorithms and developing\nan intuition for when to use one versus another. That\nintuition comes from experience and from an understanding of\nhow machine learning fits mathematical models to data. This\nchapter represents the first step on that journey. It begins\nwith an overview of machine learning and the most common\ntypes of machine learning models, and it concludes by\nintroducing two popular learning algorithms and using them to\nbuild simple yet fully functional models.\nWhat Is Machine Learning?\nAt an existential level, machine learning (ML) is a means for\nfinding patterns in numbers and exploiting those patterns to\nmake predictions. ML makes it possible to train a model with\nrows or sequences of 1s and 0s, and to learn from the data so\nthat, given a new sequence, the model can predict what",
+                "faiss_rank": null,
+                "bm25_rank": 5
+            },
+            {
+                "chunk_id": 3333,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 622,
+                "text": "621\nL\n \nL-BFGS (Limited-memory Broyden–Fletcher–Goldfarb–\nShanno) algorithm, Logistic Regression\nlabel column, What Is Machine Learning?\nlabeled data, Supervised Versus Unsupervised Learning,\nSupervised Learning\nLabeled Faces in the Wild (LFW) dataset, What Is Machine\nLearning?, Using SVMs for Facial Recognition,\nUnderstanding Principal Component Analysis, Training a\nNeural Network to Recognize Faces, Facial Recognition\nLabelEncoder class, Categorical Data\nlabels\nand classification models, Classification Models\nencoding in clustering, Segmenting Customers Using\nMore Than Two Dimensions-Segmenting Customers Using\nMore Than Two Dimensions, Categorical Data-\nCategorical Data\nsentiment analysis dataset as labeled, Sentiment\nAnalysis\nunlabeled dataset with PCA, Anomaly Detection, Using\nPCA to Predict Bearing Failure\nlanguage models (see natural language processing)\nLanguage service, Introducing Azure Cognitive Services,\nThe Language Service-The Language Service\nLaplace smoothing, Naive Baye",
+                "faiss_rank": null,
+                "bm25_rank": 6
+            },
+            {
+                "chunk_id": 3321,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 616,
+                "text": "615\nImageDataGenerator\nImageNet dataset, Pretrained CNNs\nimages, classifying and generating, What Is Machine\nLearning?-What Is Machine Learning?\narctic wildlife recognition, Applying Image\nAugmentation to Arctic Wildlife-Applying Image\nAugmentation to Arctic Wildlife\nwith augmentation layers, Image Augmentation with\nAugmentation Layers\ncaption generating, Introducing Azure Cognitive\nServices, The Computer Vision Service-The Computer\nVision Service\nCNNs (see convolutional neural networks)\nextracting text from photos, The Computer Vision\nService\nface detection (see face detection)\nfacial recognition (see facial recognition)\ngenerating with GANs, Understanding Neural Networks\nwith k-nearest neighbors, Using k-Nearest Neighbors\nto Classify Flowers-Using k-Nearest Neighbors to\nClassify Flowers\nobject detection (see object detection)\ntuning hyperparameters, Hyperparameter Tuning-\nHyperparameter Tuning\nIMDB movie dataset, Sentiment Analysis, Using\nTextVectorization in a Sentiment Analysis Mod",
+                "faiss_rank": null,
+                "bm25_rank": 7
+            },
+            {
+                "chunk_id": 3313,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 612,
+                "text": "611\nwith SVMs, Using SVMs for Facial Recognition-Using\nSVMs for Facial Recognition\nwith transfer learning, Applying Transfer Learning to\nFacial Recognition-Boosting Transfer Learning with\nTask-Specific Weights\nfalse positive rate (FPR), Accuracy Measures for\nClassification Models\nFast R-CNN, R-CNNs\nFaster R-CNN, R-CNNs\nfeature columns, What Is Machine Learning?\nfeature maps, Understanding CNNs\nfiltering noise in images, Filtering Noise-Filtering\nNoise\nfit method\nin Keras, Building Neural Networks with Keras and\nTensorFlow, Keras Callbacks, Image Augmentation with\nImageDataGenerator\nin Scikit-Learn, Using k-Nearest Neighbors to\nClassify Flowers, Accuracy Measures for Regression\nModels\nfit_on_texts method, Text Preparation\nFlask framework, Operationalizing Machine Learning\nModels, Putting It All Together: Contoso Travel\nFlatten layer, Global Pooling, Text Classification\nflow method, Image Augmentation with ImageDataGenerator\nflow_from_directory method, Image Augmentation with\nImageDataGe",
+                "faiss_rank": null,
+                "bm25_rank": 8
+            },
+            {
+                "chunk_id": 2206,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 28,
+                "text": "27\nFigure 1-1. Simple dataset consisting of 0s and 1s\nOne possible solution is that for a given row, if the first\nthree columns contain more 0s than 1s, then the fourth\ncontains a 0. If the first three columns contain more 1s than\n0s, then the answer is 1. By this logic, the empty box should\ncontain a 1. Data scientists refer to the column containing\nanswers (the red column in the figure) as the label column.\nThe remaining columns are feature columns. The goal of a\npredictive model is to find patterns in the rows in the\nfeature columns that allow it to predict what the label will\nbe.\nIf all datasets were this simple, you wouldn’t need machine\nlearning. But real-world datasets are larger and more\ncomplex. What if the dataset contained millions of rows and\nthousands of columns, which, as it happens, is common in\nmachine learning? For that matter, what if the dataset\nresembled the one in Figure 1-2?",
+                "faiss_rank": null,
+                "bm25_rank": 9
+            },
+            {
+                "chunk_id": 112,
+                "document_name": "An-Introduction-to-Statistical-Learning-with-Applications-in-Python.pdf",
+                "page_number": 37,
+                "text": "2.1 What Is Statistical Learning?\n23\nYears of Education\nSeniority\nIncome\nFIGURE 2.6. A rough thin-plate spline fit to the Income data from Figure 2.3.\nThis fit makes zero errors on the training data.\nto produce an estimate for f that is as close as possible to the observed\ndata, subject to the fit—that is, the yellow surface in Figure 2.5—being\nsmooth. In this case, the non-parametric fit has produced a remarkably ac-\ncurate estimate of the true f shown in Figure 2.3. In order to fit a thin-plate\nspline, the data analyst must select a level of smoothness. Figure 2.6 shows\nthe same thin-plate spline fit using a lower level of smoothness, allowing\nfor a rougher fit. The resulting estimate fits the observed data perfectly!\nHowever, the spline fit shown in Figure 2.6 is far more variable than the\ntrue function f, from Figure 2.3. This is an example of overfitting the\ndata, which we discussed previously. It is an undesirable situation because\nthe fit obtained will not yield accurate estimat",
+                "faiss_rank": null,
+                "bm25_rank": 10
+            }
+        ]
+    },
+    {
+        "query": "What is linear algebra used for in deep learning?",
+        "candidates": [
+            {
+                "chunk_id": 3504,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 28,
+                "text": "tals of Linear Algebra for Deep Learning",
+                "faiss_rank": 1,
+                "bm25_rank": 2
+            },
+            {
+                "chunk_id": 3476,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 18,
+                "text": "y be\ncomputed efficiently when the data is in solely numerical format.\nMuch of the work in linear algebra centers on the emergent properties of matrices,\nwhich are especially interesting when the matrix has certain base attributes, and\noperations on these data structures. Vectors, which can be seen as a subset type of\nmatrices, are a 1D array of numbers. This data structure can be used to represent\nan individual data point or the weights in a linear regression, for example. We cover\nproperties of matrices and vectors as well as operations on both.\n2 \n| \nChapter 1: Fundamentals of Linear Algebra for Deep Learning",
+                "faiss_rank": 2,
+                "bm25_rank": 1
+            },
+            {
+                "chunk_id": 3472,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 17,
+                "text": "CHAPTER 1\nFundamentals of Linear Algebra\nfor Deep Learning\nIn this chapter, we cover important prerequisite knowledge that will motivate our\ndiscussion of deep learning techniques in the main text and the optional sidebars at\nthe end of select chapters. Deep learning has recently experienced a renaissance, both\nin academic research and in the industry. It has pushed the limits of machine learning\nby leaps and bounds, revolutionizing fields such as computer vision and natural\nlanguage processing. However, it is important to remember that deep learning is, at\nits core, a culmination of achievements in fields such as calculus, linear algebra, and\nprobability. Although there are deeper connections to other fields of mathematics, we\nfocus on the three listed here to help us broaden our perspective before diving into\ndeep learning. These fields are key to unlocking both the big picture of deep learning\nand the intricate subtleties that make it as exciting as it is. In this first chapter on\nb",
+                "faiss_rank": 3,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3512,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 31,
+                "text": "Summary\nIn this chapter, we investigated some of the basics of applied linear algebra. We\nlearned about the key data structures and operations that rule both applied linear\nalgebra and deep learning, and different ways to view these fundamental operations.\nFor example, we learned that the dot product view of matrix multiplication was\nimportant from a computational lens, while the column vector approach led us into\nour discussion on the fundamental spaces quite naturally. We also got a peek at some\nof the surprising hidden properties of matrices, such as eigenvalues and eigenvectors,\nand how these properties are widely utilized in data science even to this day. In\nthe next chapter, we will learn about the field of probability, which is often used in\ntandem with linear algebra to build complex, neural models used in the world.\nSummary \n| \n15",
+                "faiss_rank": 4,
+                "bm25_rank": 3
+            },
+            {
+                "chunk_id": 3473,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 17,
+                "text": "ive before diving into\ndeep learning. These fields are key to unlocking both the big picture of deep learning\nand the intricate subtleties that make it as exciting as it is. In this first chapter on\nbackground, we cover the fundamentals of linear algebra.\nData Structures and Operations\nThe most important data structure in linear algebra (whenever we reference linear\nalgebra in this text, we refer to its applied variety) is arguably the matrix, a 2D array\nof numbers where each entry can be indexed via its row and column. Think of an\nExcel spreadsheet, where you have offers from Company X and Company Y as two\nrows, and the columns represent some characteristic of each offer, such as starting\nsalary, bonus, or position, as shown in Table 1-1.\n1",
+                "faiss_rank": 5,
+                "bm25_rank": 7
+            },
+            {
+                "chunk_id": 3462,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 11,
+                "text": "linear algebra and probability, to prepare you for\nthe material that lies ahead.\nBy the end of the book, we hope you will be left with an intuition for how to\napproach problems using deep learning, the historical context for modern deep\nlearning approaches, and a familiarity with implementing deep learning algorithms\nusing the PyTorch open source library.\nix",
+                "faiss_rank": 6,
+                "bm25_rank": 6
+            },
+            {
+                "chunk_id": 3429,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 5,
+                "text": "Table of Contents\nPreface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  ix\n1. Fundamentals of Linear Algebra for Deep Learning. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  1\nData Structures and Operations                                                                                       1\nMatrix Operations                                                                                                          3\nVector Operations                                                                                                          6\nMatrix-Vector Multiplication                                                                                       7\nThe Fundamental Spaces                                                                                                  7\nThe Column Space",
+                "faiss_rank": 7,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3489,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 23,
+                "text": "deep learning\ntechniques.\nThe Fundamental Spaces\nIn this section, we will formally discuss some important matrix properties and\nprovide some background knowledge on key algorithms in deep learning, such as\nrepresentation learning.\nThe Column Space\nConsider the set of all possible vectors v and their products Av. We term this the col‐\numn space of A, or C(A). The term column space is used because C(A) represents\nall possible linear combinations of the columns of A, where a linear combination of\nvectors is a sum of constant scalings of each vector. The constant scaling for each\nThe Fundamental Spaces \n| \n7",
+                "faiss_rank": 8,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2699,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 290,
+                "text": "289\nto the challenges inherent to training neural networks, see the\narticle “How Neural Networks Are Trained”.\nNeural networks are fundamentally simple. Training them is\nmathematically complex. Fortunately, you don’t have to\nunderstand everything that happens during training in order\nto build them. Deep-learning libraries such as Keras and\nTensorFlow insulate you from the math and provide cutting-\nedge optimizers to do the heavy lifting. But now when you use\none of these libraries and it asks you to pick a loss\nfunction and an optimizer, you’ll understand what it’s\nasking for and why.\nSummary\nDeep learning is a subset of machine learning that relies on\ndeep neural networks, and it is the root of modern AI. It’s\nhow computers identify objects in images, translate text and\nspeech into other languages, generate artwork and music, and\nperform other tasks that were virtually impossible a few\nyears ago.\nThe multilayer perceptron is a simple neural network\ncomprising layers of neurons. Each n",
+                "faiss_rank": 9,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2685,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 282,
+                "text": "281\nLook familiar? That’s the equation for linear regression.\nScikit-Learn has a Perceptron class that models this behavior\nand can be used to build neural linear regression models. It\neven offers classes named MLPRegressor and MLPClassifier for\nbuilding simple multilayer perceptrons. Scikit is not,\nhowever, a deep-learning library. Real deep-learning\nlibraries do more to support advanced neural networks.\nNOTE\nThe combination of neurons that perform linear transformations and\nactivation functions that apply nonlinear transforms is an\nembodiment of the universal approximation theorem, which states\nthat you can approximate any function f by summing the output from\nlinear functions and transforming it with a nonlinear function.\nTextbooks often say that activation functions “add nonlinearity”\nto neural networks. Now you know why.\nTo turn inputs into outputs, a neural network assigns the\ninput values to the neurons in the input layer. Then it\nmultiplies the values of the input neurons by th",
+                "faiss_rank": 10,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 3463,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 12,
+                "text": "How Is This Book Organized?\nThe first chapters of this book are dedicated to developing mathematical maturity via\ndeep dives into linear algebra and probability, which are deeply embedded in the field\nof deep learning. The next several chapters discuss the structure of feed-forward neu‐\nral networks, how to implement them in code, and how to train and evaluate them on\nreal-world datasets. The rest of the book is dedicated to specific applications of deep\nlearning and understanding the intuition behind the specialized learning techniques\nand neural network architectures developed for those applications. Although we\ncover advanced research in these latter sections, we hope to provide a breakdown of\nthese techniques that is derived from first principles and digestible.\nConventions Used in This Book\nThe following typographical conventions are used in this book:\nItalic\nIndicates new terms, URLs, email addresses, filenames, and file extensions.\nConstant width\nUsed for program listings, as we",
+                "faiss_rank": null,
+                "bm25_rank": 4
+            },
+            {
+                "chunk_id": 3491,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 24,
+                "text": "dition on the vectors in question, we are just computing linear\ncombinations of linear combinations, which are still linear combinations, as can be\nseen in Figure 1-10.\nFigure 1-10. The sum, or linear combination, of the two linear combinations 3a and 2b\n+ 2c is still a linear combination of the original vectors a, b, and c\n8 \n| \nChapter 1: Fundamentals of Linear Algebra for Deep Learning",
+                "faiss_rank": null,
+                "bm25_rank": 5
+            },
+            {
+                "chunk_id": 3452,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 9,
+                "text": ". . . . . .  325\nDeep Reinforcement Learning Masters Atari Games                                               325\nWhat Is Reinforcement Learning?                                                                              326\nMarkov Decision Processes                                                                                          328\nPolicy                                                                                                                            329\nFuture Return                                                                                                             330\nDiscounted Future Return                                                                                        331\nExplore Versus Exploit                                                                                                  331\nϵ-Greedy                                                                                                                      333\nAnnealed ϵ-Greedy",
+                "faiss_rank": null,
+                "bm25_rank": 8
+            },
+            {
+                "chunk_id": 3487,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 22,
+                "text": "ly a matrix! This is termed the outer product.\nFigure 1-8 is the outer product of the same two vectors from the dot product\nexample, except their roles as row and column vectors have been reversed.\nFigure 1-8. Outer product\n6 \n| \nChapter 1: Fundamentals of Linear Algebra for Deep Learning",
+                "faiss_rank": null,
+                "bm25_rank": 9
+            },
+            {
+                "chunk_id": 3511,
+                "document_name": "deep-learning-material-dept-ece-ase-blr-1.pdf",
+                "page_number": 30,
+                "text": "ix, which represents the quantifiable relationships between features\nalluded to earlier, to perform dimensionality reduction on the original data matrix.\nWe will discuss correlation and related concepts in the next chapter on probability,\nand learn more about PCA in Chapter 8.\n14 \n| \nChapter 1: Fundamentals of Linear Algebra for Deep Learning",
+                "faiss_rank": null,
+                "bm25_rank": 10
+            }
+        ]
+    },
+    {
+        "query": "When should machine learning not be used?",
+        "candidates": [
+            {
+                "chunk_id": 4727,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 25,
+                "text": "1.5\nWhen Not to Use Machine Learning\nThere are plenty of problems that cannot be solved using machine learning; it’s hard to\ncharacterize all of them. Here we only consider several hints.\nYou probably should not use machine learning when:\n• every action of the system or a decision made by it must be explainable,\n• every change in the system’s behavior compared to its past behavior in a similar\nsituation must be explainable,\n• the cost of an error made by the system is too high,\n• you want to get to the market as fast as possible,\n• getting the right data is too hard or impossible,\n• you can solve the problem using traditional software development at a lower cost,\n• a simple heuristic would work reasonably well,\n• the phenomenon has too many outcomes while you cannot get a suﬃcient amount of\nexamples to represent them (like in video games or word processing software),\n• you build a system that will not have to be improved frequently over time,\n• you can manually ﬁll an exhaustive lookup",
+                "faiss_rank": 1,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4781,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 42,
+                "text": ", by the technical team, of\nthe business objective. Scientists usually frame the problem as classiﬁcation or regression with\na technical objective, such as high accuracy or low mean squared error. Without continuous\nfeedback from the business team on the achievement of a business objective (such as an\nincreased click-through rate or user retention), the scientists often reach an initial level of\nmodel performance (according to the technical objective), and then they are not sure if they\nare making any useful progress and whether an additional eﬀort is worth it. In such situations,\nthe projects end up being put on the shelf because time and resources were spent but the\nbusiness team didn’t accept the result.\n2.6\nSummary\nBefore a machine learning project starts, it must be prioritized, and the team working on\nthe project must be built. The key considerations in the prioritization of a machine learning\nproject, are impact and cost.\nThe impact of using machine learning is high when, 1) mac",
+                "faiss_rank": 2,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2201,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 26,
+                "text": "25\nChapter 1. Machine Learning\nMachine learning expands the boundaries of what’s possible\nby allowing computers to solve problems that were intractable\njust a few short years ago. From fraud detection and medical\ndiagnoses to product recommendations and cars that “see”\nwhat’s in front of them, machine learning impacts our lives\nevery day. As you read this, scientists are using machine\nlearning to unlock the secrets of the human genome. When we\none day cure cancer, we will thank machine learning for\nmaking it possible.\nMachine learning is revolutionary because it provides an\nalternative to algorithmic problem-solving. Given a recipe,\nor algorithm, it’s not difficult to write an app that hashes\na password or computes a monthly mortgage payment. You code\nup the algorithm, feed it input, and receive output in\nreturn. It’s another proposition altogether to write code\nthat determines whether a photo contains a cat or a dog. You\ncan try to do it algorithmically, but the minute you get it\nwork",
+                "faiss_rank": 3,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4770,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 39,
+                "text": "s introduced the MLOps role, whose responsibility\nis to deploy machine learning models in production, upgrade those models, and build data\nprocessing pipelines involving machine learning models.\n2.5\nWhy Machine Learning Projects Fail\nAccording to various estimates made between 2017 and 2020, from 74% to 87% of machine\nlearning and advanced analytics projects fail or don’t reach production. The reasons for\na failure range from organizational to engineering. In this section, we consider the most\nimpactful of them.\n2.5.1\nLack of Experienced Talent\nAs of 2020, both data science and machine learning engineering are relatively new disciplines.\nThere’s still no standard way to teach them. Most organizations don’t know how to hire experts\nin machine learning and how to compare them. Most of the available talent on the market are\npeople who completed one or several online courses and who don’t possess signiﬁcant practical\nexperience. A signiﬁcant fraction of the workforce has superﬁcial experti",
+                "faiss_rank": 4,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 5555,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 292,
+                "text": "Furthermore, unless you can ﬁnd a public dataset and an open-source solution providing\nexactly what you need, machine learning is not the right approach for the shortest time\nto market. Sometimes the data needed to train and maintain a model is too hard or even\nimpossible to get.\nOn the other hand, training data may be synthetically generated by using oversampling and\ndata augmentation. These techniques are often applied when the data exhibits imbalance.\nBefore you start collecting data, ask these questions: is your data accessible, sizeable, usable,\nunderstandable, and reliable? Good data contains enough information for modeling, has\ngood coverage of production use cases and few biases, is big enough to allow generalization,\nand not a result of the model itself.\nOr does your data come with high cost, bias, imbalance, missing attributes, and/or noisy\nlabels? Data quality must be ensured before it’s used for training.\nThe machine learning project life cycle consists of the following sta",
+                "faiss_rank": 5,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4715,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 22,
+                "text": "contrary to shallow learning, most model parameters are learned not directly from the features\nof the training examples, but from the outputs of the preceding layers.\n1.3.10\nTraining vs. Scoring\nWhen we apply a machine learning algorithm to a dataset in order to obtain a model, we\ntalk about model training or simply training.\nWhen we apply a trained model to an input example (or, sometimes, a sequence of examples)\nin order to obtain a prediction (or, predictions) or to somehow transform an input, we talk\nabout scoring.\n1.4\nWhen to Use Machine Learning\nMachine learning is a powerful tool for solving practical problems. However, like any tool,\nit should be used in the right context. Trying to solve all problems using machine learning\nwould be a mistake.\nYou should consider using machine learning in one of the following situations.\n1.4.1\nWhen the Problem Is Too Complex for Coding\nIn a situation where the problem is so complex or big that you cannot hope to write all the\nrules to solve it",
+                "faiss_rank": 6,
+                "bm25_rank": 1
+            },
+            {
+                "chunk_id": 4744,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 32,
+                "text": "achine learning project starts.\n2.1\nPrioritization of Machine Learning Projects\nThe key considerations in the prioritization of a machine learning project, are impact and cost.\n2.1.1\nImpact of Machine Learning\nThe impact of using machine learning in a broader engineering project is high when, 1) machine\nlearning can replace a complex part in your engineering project or 2) there’s a great beneﬁt\nin getting inexpensive (but probably imperfect) predictions.\nFor example, a complex part of an existing system can be rule-based, with many nested\nrules and exceptions. Building and maintaining such a system can be extremely diﬃcult,\ntime-consuming, and error-prone. It can also be a source of signiﬁcant frustration for software\nengineers when they are asked to maintain that part of the system. Can the rules be learned\ninstead of programming them? Can an existing system be used to generate labeled data\neasily? If yes, such a machine learning project would have a high impact and low cost.\nInexpens",
+                "faiss_rank": 7,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 4740,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 28,
+                "text": "tions when machine learning should, probably, not be used: when\nexplainability is needed, when errors are intolerable, when traditional software engineering\nis a less expensive option, when all inputs and outputs can be enumerated and saved in a\ndatabase, and when data is hard to get or too expensive.\nMachine learning engineering (MLE) is the use of scientiﬁc principles, tools, and techniques of\nmachine learning and traditional software engineering to design and build complex computing\nsystems. MLE encompasses all stages from data collection, to model training, to making the\nmodel available for use by the product or the consumers.\nAndriy Burkov\nMachine Learning Engineering - Draft\n20",
+                "faiss_rank": 8,
+                "bm25_rank": 6
+            },
+            {
+                "chunk_id": 4725,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 24,
+                "text": "em with a simple objective: such as yes/no decisions or a single number. In contrast, you\ncannot use machine learning to build a model that works as a general video game, like Mario,\nor a word processing software, like Word. This is due to too many diﬀerent decisions to make:\nwhat to display, where and when, what should happen as a reaction to the user’s input, what\nto write to or read from the hard drive, and so on; getting examples that illustrate all (or\neven most) of those decisions is practically infeasible.\n1.4.6\nWhen It Is Cost-Eﬀective\nThree major sources of cost in machine learning are:\n• collecting, preparing, and cleaning the data,\n• training the model,\n• building and running the infrastructure to serve and and monitor the model, as well as\nlabor resources to maintain it.\nThe cost of training the model includes human labor and, in some cases, the expensive\nhardware needed to train deep models. Model maintenance includes continuously monitoring\nthe model and collecting additi",
+                "faiss_rank": 9,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 2269,
+                "document_name": "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+                "page_number": 64,
+                "text": "63\nSummary\nMachine learning offers engineers and software developers an\nalternative approach to problem-solving. Rather than use\ntraditional computer algorithms to transform input into\noutput, machine learning relies on learning algorithms to\nbuild mathematical models from training data. Then it uses\nthose models to turn future inputs into outputs.\nMost machine learning models fall into either of two\ncategories. Unsupervised learning models are widely used to\nanalyze datasets by highlighting similarities and\ndifferences. They don’t require labeled data. Supervised\nlearning models learn from labeled data in order to make\npredictions—for example, to predict whether a credit card\ntransaction is legitimate. Supervised learning can be used to\nsolve regression problems or classification problems.\nRegression models predict numeric outcomes, while\nclassification models predict classes (categories).\nk-means clustering is a popular unsupervised learning\nalgorithm, while k-nearest neighbors is a",
+                "faiss_rank": 10,
+                "bm25_rank": null
+            },
+            {
+                "chunk_id": 1904,
+                "document_name": "An-Introduction-to-Statistical-Learning-with-Applications-in-Python.pdf",
+                "page_number": 543,
+                "text": "12.4 Clustering Methods\n533\n5\n10\n15\n20\n0\n5\n10\n15\n20\nVariable Index\nObservation 1\nObservation 2\nObservation 3\n1\n2\n3\nFIGURE 12.15.\nThree observations with measurements on 20 variables are\nshown. Observations 1 and 3 have similar values for each variable and so there\nis a small Euclidean distance between them. But they are very weakly correlated,\nso they have a large correlation-based distance. On the other hand, observations\n1 and 2 have quite different values for each variable, and so there is a large\nEuclidean distance between them. But they are highly correlated, so there is a\nsmall correlation-based distance between them.\n• Should the observations or features first be standardized in some way?\nFor instance, maybe the variables should be scaled to have standard\ndeviation one.\n• In the case of hierarchical clustering,\n– What dissimilarity measure should be used?\n– What type of linkage should be used?\n– Where should we cut the dendrogram in order to obtain clusters?\n• In the case of K-m",
+                "faiss_rank": null,
+                "bm25_rank": 2
+            },
+            {
+                "chunk_id": 1905,
+                "document_name": "An-Introduction-to-Statistical-Learning-with-Applications-in-Python.pdf",
+                "page_number": 543,
+                "text": "e of hierarchical clustering,\n– What dissimilarity measure should be used?\n– What type of linkage should be used?\n– Where should we cut the dendrogram in order to obtain clusters?\n• In the case of K-means clustering, how many clusters should we look\nfor in the data?\nEach of these decisions can have a strong impact on the results obtained.\nIn practice, we try several different choices, and look for the one with\nthe most useful or interpretable solution. With these methods, there is no\nsingle right answer—any solution that exposes some interesting aspects of\nthe data should be considered.\nValidating the Clusters Obtained\nAny time clustering is performed on a data set we will find clusters. But we\nreally want to know whether the clusters that have been found represent\ntrue subgroups in the data, or whether they are simply a result of clustering\nthe noise. For instance, if we were to obtain an independent set of observa-\ntions, then would those observations also display the same set of clu",
+                "faiss_rank": null,
+                "bm25_rank": 3
+            },
+            {
+                "chunk_id": 5554,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 291,
+                "text": "se, will be solved with machine learning. In fact, many problems can be solved more\neasily using a heuristic, a lookup in a database, or traditional software development. You\nprobably should not use machine learning if the system’s every action, decision, or behavior,\nmust be explained. With rare exceptions, machine learning models are blackboxes. They\nwill not tell you why they predicted what they predicted, nor why they didn’t predict today\nwhat they predicted yesterday, nor how to ﬁx these issues.\nAndriy Burkov\nMachine Learning Engineering - Draft\n3",
+                "faiss_rank": null,
+                "bm25_rank": 4
+            },
+            {
+                "chunk_id": 4739,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 28,
+                "text": "ased on the training\ndata. The values of hyperparameters cannot be learned by the learning algorithm and are, in\nturn, tuned by using the validation dataset. The test set is only used to assess the model’s\nperformance and report it to the client or product owner.\nA shallow learning algorithm trains a model that makes predictions directly from the input\nfeatures. A deep learning algorithm trains a layered model, in which each layer generates\noutputs by taking the outputs of the preceding layer as inputs.\nYou should consider using machine learning to solve a business problem when the problem is\ntoo complex for coding, the problem is constantly changing, it is a perceptive problem, it is\nan unstudied phenomenon, the problem has a simple objective, and it is cost-eﬀective.\nThere are many situations when machine learning should, probably, not be used: when\nexplainability is needed, when errors are intolerable, when traditional software engineering\nis a less expensive option, when all inputs",
+                "faiss_rank": null,
+                "bm25_rank": 5
+            },
+            {
+                "chunk_id": 4675,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 11,
+                "text": "1\nIntroduction\nThough the reader of this book should have a basic understanding of machine learning,\nit is still important to start with deﬁnitions, so that we are sure that we have a common\nunderstanding of the terms used throughout the book.\nBelow, I repeat some of the deﬁnitions from Chapter 2 of The Hundred-Page Machine\nLearning Book and also give several new ones. If you read my ﬁrst book, some parts of this\nchapter might sound familiar.\nAfter reading this chapter, we will understand the same way such concepts as supervised and\nunsupervised learning. We will agree on the data terminology, such as data used directly and\nindirectly, raw and tidy data, training and holdout data.\nWe will know when to use machine learning, when not to use it, and various forms of machine\nlearning such as model- and instance-based, deep and shallow, classiﬁcation and regression,\nand others.\nFinally, we will deﬁne the scope of machine learning engineering and introduce the machine\nlearning project lifecy",
+                "faiss_rank": null,
+                "bm25_rank": 7
+            },
+            {
+                "chunk_id": 4722,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 23,
+                "text": "ay, perceptive problems are eﬀectively solved using machine learning models, such as\nneural networks. We consider the problem of training neural networks in Chapter 6.\n1.4.4\nWhen It Is an Unstudied Phenomenon\nIf we need to be able to make predictions of some phenomenon that is not well-studied\nscientiﬁcally, but examples of it are observable, then machine learning might be an appropriate\nAndriy Burkov\nMachine Learning Engineering - Draft\n15",
+                "faiss_rank": null,
+                "bm25_rank": 8
+            },
+            {
+                "chunk_id": 4732,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 26,
+                "text": "e, where a program’s behavior usually is\ndeterministic, machine learning applications incorporate models whose behavior may naturally\ndegrade over time, or they can start behaving abnormally. Such abnormal behavior of the\nmodel might be explained by various reasons, including a fundamental change in the input\ndata or an updated feature extractor that now returns a diﬀerent distribution of values or\nvalues of a diﬀerent type. They often say that machine learning systems “fail silently.” A\nmachine learning engineer must be capable of preventing such failures or, when it’s impossible\nto prevent them entirely, know how to detect and handle them when they happen.\n1.7\nMachine Learning Project Life Cycle\nA machine learning project starts with understanding the business objective. Usually, a\nbusiness analyst works with the client12 and the data analyst to transform a business\nproblem into an engineering project.\nThe engineering project may or may not have a\nmachine learning part.\nIn this book,",
+                "faiss_rank": null,
+                "bm25_rank": 9
+            },
+            {
+                "chunk_id": 5256,
+                "document_name": "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+                "page_number": 194,
+                "text": "utcome. The\nkey word here is “uncorrelated.” Ideally, base models should be obtained by using diﬀerent\nfeatures, or be of a diﬀerent nature — for example, SVM and random forest. Combining\n3You can read about ensemble learning algorithms in Chapter 7 of The Hundred-Page Machine Learning\nBook.\nAndriy Burkov\nMachine Learning Engineering - Draft\n19",
+                "faiss_rank": null,
+                "bm25_rank": 10
+            }
+        ]
+    }
+]

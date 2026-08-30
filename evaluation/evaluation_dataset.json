@@ -1,0 +1,59 @@
+[
+    {
+        "query": "What is machine learning engineering?",
+        "relevant_documents": [
+            "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf"
+        ]
+    },
+    {
+        "query": "What is deep learning?",
+        "relevant_documents": [
+            "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+            "deep-learning-material-dept-ece-ase-blr-1.pdf"
+        ]
+    },
+    {
+        "query": "How do neural networks learn?",
+        "relevant_documents": [
+            "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+            "deep-learning-material-dept-ece-ase-blr-1.pdf"
+        ]
+    },
+    {
+        "query": "What is a neural network?",
+        "relevant_documents": [
+            "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+            "deep-learning-material-dept-ece-ase-blr-1.pdf"
+        ]
+    },
+    {
+        "query": "What is the difference between machine learning and deep learning?",
+        "relevant_documents": [
+            "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+            "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+            "deep-learning-material-dept-ece-ase-blr-1.pdf"
+        ]
+    },
+    {
+        "query": "What is overfitting in machine learning?",
+        "relevant_documents": [
+            "Applied-Machine-Learning-and-AI-for-Engineers.pdf",
+            "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf",
+            "An-Introduction-to-Statistical-Learning-with-Applications-in-Python.pdf",
+            "deep-learning-material-dept-ece-ase-blr-1.pdf"
+        ]
+    },
+    {
+        "query": "What is linear algebra used for in deep learning?",
+        "relevant_documents": [
+            "deep-learning-material-dept-ece-ase-blr-1.pdf",
+            "Applied-Machine-Learning-and-AI-for-Engineers.pdf"
+        ]
+    },
+    {
+        "query": "When should machine learning not be used?",
+        "relevant_documents": [
+            "Machine Learning Engineering (Andriy Burkov) (Z-Library).pdf"
+        ]
+    }
+]

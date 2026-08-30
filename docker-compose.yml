@@ -1,0 +1,36 @@
+services:
+
+  rag-api:
+
+    build: .
+
+    container_name: personal-knowledge-rag
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      OLLAMA_URL: http://ollama:11434/api/generate
+      MODEL_NAME: gemma3:1b
+      TOP_K: 5
+
+    depends_on:
+      - ollama
+
+
+  ollama:
+
+    image: ollama/ollama
+
+    container_name: ollama
+
+    ports:
+      - "11434:11434"
+
+    volumes:
+      - ollama_data:/root/.ollama
+
+
+volumes:
+
+  ollama_data:
