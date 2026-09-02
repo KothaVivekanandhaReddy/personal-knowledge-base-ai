@@ -391,3 +391,49 @@ Cloud deployment
 CI/CD
 
 These are the next stages for evolving the project from a working end-to-end RAG system into a more complete production-style AI application.
+
+# 2026-09-02
+
+## V1 Deployment Completed
+
+Completed end-to-end Docker deployment and validation of the personal knowledge-base RAG system.
+
+### Deployment
+
+- Built the RAG API Docker image successfully.
+- Changed PyTorch installation to CPU-only.
+- Avoided unnecessary CUDA/NVIDIA dependencies in the RAG API container.
+- Started the RAG API and Ollama containers using Docker Compose.
+- Verified Ollama contains `gemma3:1b`.
+
+### API Validation
+
+Verified:
+
+- `GET /health` returns `{"status":"healthy"}`.
+- Known question about machine learning engineering returns a grounded answer with source metadata.
+- Known question about deep learning returns a grounded answer with source metadata.
+- Unknown question about the US president correctly abstains with:
+  `I could not find the answer in the provided documents.`
+- Unknown question returns no sources.
+- Docker container is confirmed to use the FAISS `VectorStore` implementation.
+
+### Retrieval Architecture
+
+V1 uses:
+
+Question
+→ FAISS
+→ similarity threshold
+→ ContextBuilder
+→ PromptBuilder
+→ Gemma 3 1B
+→ Answer + Sources
+
+BM25 hybrid retrieval and cross-encoder reranking remain available as experimental implementations but are not part of the selected V1 serving path.
+
+### V1 Status
+
+V1 end-to-end RAG foundation and Docker deployment are complete.
+
+Next work begins with V2 production hardening.
